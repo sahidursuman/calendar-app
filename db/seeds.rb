@@ -3,18 +3,23 @@
 
 # Temporary admin account
 u = User.new(
-    email: "admin@example.com",
-    password: "1234",
+    email: "ct@123.com",
+    password: "123123",
     admin: true
 )
 u.skip_confirmation!
 u.save!
 
 # Test user accounts
-(1..50).each do |i|
+50.times do |i|
+	first_name = Faker::Name.first_name
+	last_name = Faker::Name.last_name
   u = User.new(
-      email: "user#{i}@example.com",
-      password: "1234"
+  		first_name: first_name,
+  		last_name: last_name,
+      email: first_name.downcase + last_name.downcase + "#{i}@123.com",
+      password: "123123",
+      time_zone: Faker::Address.time_zone
   )
   u.skip_confirmation!
   u.save!
