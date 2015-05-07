@@ -17,7 +17,7 @@ u.save!
   u = User.new(
   		first_name: first_name,
   		last_name: last_name,
-      email: first_name.downcase + last_name.downcase + "#{i}@123.com",
+      email: first_name.chr.downcase + last_name.chr.downcase + "#{i}@123.com",
       password: "123123",
       time_zone: Faker::Address.time_zone
   )
