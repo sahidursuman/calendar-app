@@ -18,7 +18,10 @@ class ApplicationController < ActionController::Base
       :email,
       :password,
       :password_confirmation,
-      :current_password
+      :current_password,
+      :first_name,
+      :last_name,
+      :time_zone
       )
     }
   end

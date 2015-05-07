@@ -15,3 +15,6 @@
 //= require turbolinks
 //= require bootstrap 
 //= require common
+//= require moment
+//= require fullcalendar
+//= require_tree .
