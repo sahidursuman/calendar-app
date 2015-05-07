@@ -4,12 +4,17 @@ class PagesController < ApplicationController
   ]
 
   def home
+  	@users = User.all
   end
 
+  def user
+  	@user = User.find(params[:id])
+  end
+  
   def inside
   end
   
-def posts
+	def posts
     @posts = Post.published.page(params[:page]).per(10)
   end
   
