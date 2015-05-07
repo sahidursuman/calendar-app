@@ -1,63 +1,98 @@
-<div class="row">
-  <div class="col-sm-6 ">
-    <h1>Edit your profile</h1>
-
-    <%= form_for(resource, :as => resource_name,
-    :url => registration_path(resource_name),
-    :html => { :method => :put, role: "form" }) do |f| %>
-
-    <%= devise_error_messages! %>
-
-    <div class="form-group">
-      <%= f.label :email %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.email_field :email, :autofocus => true, class: "form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div class="row">
-      <div class="col-sm-6">
-        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-      </div>
-    </div>
-    <% end %>
-
-    <div class="form-group">
-      <%= f.label :password %> <i><small>(leave blank if you don't want to change it)</small></i>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.password_field :password, :autocomplete => "off", class: "form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :current_password %> <i><small>(we need your current password to confirm your changes)</small></i>
-      <div class="row">
-        <div class="col-sm-6">
-          <%= f.password_field :current_password, class: "form-control" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-sm-6">
-        <%= f.submit "Update", class: "btn btn-primary" %> - <%= link_to "Cancel", inside_path %>
-      </div>
-    </div>
-
-    <% end %>
-  </div>
+<div class="col-sm-9 col-sm-offset-2">
+	<div class="page-header">
+		<h1>Edit your profile</h1>
+	</div>
 </div>
+
+<%= form_for(resource, :as => resource_name,
+:url => registration_path(resource_name),
+:html => { :method => :put, role: "form" }) do |f| %>
+
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :first_name, class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name'  %>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="form-group">
+					<%= f.label :last_name, class: 'col-sm-2 control-label' %>
+					<div class="col-sm-10">
+						<%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'  %>
+					</div>
+			</div>
+		</div>
+<br>
+
+		<div class="row">
+		 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+		      <div class="col-sm-6">
+		        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+		      </div>
+		  <br>
+		  <% end %>
+		</div>
+		
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :email, class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.text_field :email, class: 'form-control', placeholder: "Email"  %>
+				</div>
+			</div>
+		</div>
+<br>
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :time_zone, "Time zone", class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.time_zone_select :time_zone,  nil, {prompt: "Select Your Timezone"}, {:class => 'form-control'} %>
+				</div>
+			</div>	
+		</div>
+<br>
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :password, class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.password_field :password, :autocomplete => "off", class: "form-control" %>
+					<span class="help-block">(leave blank if you don't want to change it)</span>
+				</div>
+			</div>  	
+		</div>
+<!-- <br> -->
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :password_confirmation, class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password Confirmation" %>
+				</div>
+			</div>
+		</div>
+<!-- <br> -->
+		<div class="row">
+			<div class="form-group">
+				<%= f.label :current_password, class: 'col-sm-2 control-label' %>
+				<div class="col-sm-10">
+					<%= f.password_field :current_password, class: 'form-control'%>
+					<span class="help-block">(we need your current password to confirm your changes)</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			 <div class="form-group">
+				<div class="col-sm-offset-2 col-xs-12 col-sm-6">
+				<%= f.submit "Update", class: "btn btn-primary" %> - <%= link_to "Cancel", inside_path %>
+				</div>
+			</div>  
+		</div>
+
+	</div>
+</div>
+<% end %>

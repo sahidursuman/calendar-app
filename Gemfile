@@ -35,6 +35,7 @@ gem 'jquery-ui-rails'
 group :development, :test do
   gem 'byebug', '4.0.5'
   gem 'web-console', '2.1.2'
+  gem 'better_errors'
 
   # Figaro: https://github.com/laserlemon/figaro
   gem 'figaro', '1.1.0'
@@ -42,7 +43,7 @@ group :development, :test do
   # Spring: https://github.com/rails/spring
   gem 'spring', '1.3.4'
 end
-
+gem 'pry-rails', :group => :development
 
 # SQLite 3
 group :development, :test do
