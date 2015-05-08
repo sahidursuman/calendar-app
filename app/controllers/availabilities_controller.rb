@@ -1,10 +1,11 @@
 class AvailabilitiesController < ApplicationController
+  before_action :load_user
   before_action :set_availability, only: [:show, :edit, :update, :destroy]
 
   # GET /availabilities
   # GET /availabilities.json
   def index
-    @availabilities = Availability.all
+    @availabilities = @user.availabilities
   end
 
   # GET /availabilities/1
@@ -14,7 +15,7 @@ class AvailabilitiesController < ApplicationController
 
   # GET /availabilities/new
   def new
-    @availability = Availability.new
+    @availability = @user.availability.new
   end
 
   # GET /availabilities/1/edit
@@ -24,11 +25,11 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities
   # POST /availabilities.json
   def create
-    @availability = Availability.new(availability_params)
+    @availability = @user.availability.new(availability_params)
 
     respond_to do |format|
       if @availability.save
-        format.html { redirect_to @availability, notice: 'Availability was successfully created.' }
+        format.html { redirect_to user_availabilities_path, notice: 'Availability was successfully created.' }
         format.json { render :show, status: :created, location: @availability }
       else
         format.html { render :new }
@@ -64,11 +65,15 @@ class AvailabilitiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_availability
-      @availability = Availability.find(params[:id])
+      @availability = @user.availability.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def availability_params
-      params.require(:availability).permit(:start_time, :end_time, :user_id)
+      params.require(:availability).permit(:start_time, :end_time)
+    end
+
+    def load_user
+    	@user = User.find(params[:user_id])
     end
 end

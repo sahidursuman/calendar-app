@@ -4,7 +4,7 @@ CalendarApp::Application.routes.draw do
   get "inside", to: "pages#inside", as: "inside"
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
 
   resources :users, only: [:index, :show] do 
   	resources :availabilities

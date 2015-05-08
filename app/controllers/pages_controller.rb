@@ -7,10 +7,6 @@ class PagesController < ApplicationController
 
   end
 
-  def user
-  	@user = User.find(params[:id])
-  end
-  
   def inside
   end
   
