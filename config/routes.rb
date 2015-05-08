@@ -1,13 +1,15 @@
 CalendarApp::Application.routes.draw do
-  resources :availabilities
   root "pages#home"
   get "home", to: "pages#home", as: "home"
   get "inside", to: "pages#inside", as: "inside"
-  get "user/:id", to: "pages#user", as: "user"
   get "posts", to: "pages#posts", as: "posts"
   get "posts/:id", to: "pages#show_post", as: "post"
   devise_for :users
 
+  resources :users, only: [:index, :show] do 
+  	resources :availabilities
+  end
+  
   namespace :admin do
     root "base#index"
     resources :users

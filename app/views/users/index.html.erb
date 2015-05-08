@@ -1,0 +1,13 @@
+<% title("User index Page") %>
+<h1><i class="fa fa-home"></i> Index Page <small>views/users/index.html.erb</small></h1>
+
+<% @users.each do |user| %>
+
+<div class="title-box">
+  <p>
+    <%=  link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
+  </p>
+
+</div>
+
+<% end %>
