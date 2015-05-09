@@ -2,5 +2,7 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @availability %> |
-<%= link_to 'Back', availabilities_path %>
+<ul>
+	<li><%= link_to 'Show', ([@user, @availability]) %></li>
+	<li><%= link_to 'Back', user_availabilities_path %></li>
+</ul>

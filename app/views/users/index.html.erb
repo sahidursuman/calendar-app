@@ -4,7 +4,7 @@
 
 <% @users.each do |user| %>
 	<%= link_to user_path(user) do %>
-	  <div class="col-sm-4 btn btn-info">
+	  <div class="col-sm-3 col-sm-offset-1 btn btn-default">
 		  <h4><%= "#{user.first_name.titleize}, #{user.last_name.titleize}" %></h4>
 	    <p class="text-info">
 		    <%= user.time_zone %>

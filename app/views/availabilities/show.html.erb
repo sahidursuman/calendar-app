@@ -12,8 +12,8 @@
 
 <p>
   <strong>User:</strong>
-  <%= @availability.user %>
+  <%= @availability.user.first_name %>
 </p>
 
-<%= link_to 'Edit', edit_availability_path(@availability) %> |
-<%= link_to 'Back', availabilities_path %>
+<%= link_to 'Edit', edit_user_availability_path(@user, @availability) %> |
+<%= link_to 'Back', user_availabilities_path %>

@@ -9,5 +9,17 @@
 		</div>
 		<p><%= "#{@user.first_name} is in #{@user.time_zone}." %></p>
 			<p>More information will follow. This is where the User will display their calendar.</p>
+			<%= link_to 'Availabilities',user_availabilities_path(@user) %>
 	</div>
 </div>
+<br>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-1">
+		<div id="calendar"></div>
+	</div>
+</div>
+
+
+<script>
+	$('#calendar').fullCalendar();
+</script>
