@@ -1,0 +1,36 @@
+<% title("#{@user.first_name} #{@user.last_name}'s page") %>
+
+<div class="row">
+	<div class="col-sm-10 col-sm-offset-1">
+		<div class="page-header">
+			<h3>
+				<%="#{@user.first_name} #{@user.last_name}" %> &nbsp;
+			</h3>
+		</div>
+		<p><%= "#{@user.first_name} is in #{@user.time_zone}." %></p>
+			<p>More information will follow. This is where the User will display their calendar.</p>
+			<%= link_to 'Availabilities',user_availabilities_path(@user) %>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-1">
+		<div class="calendar"></div>
+	</div>
+</div>
+
+
+<script>
+
+	$('.calendar').fullCalendar({
+
+			header: {
+		    		left: 'title',
+		    		center: 'prev next',
+		    		right: 'today month,agendaWeek,agendaDay' 
+		    	},
+
+		    events: '/users/<%= @user.id %>/availabilities.json',
+		});
+	
+</script>
