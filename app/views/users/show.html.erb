@@ -18,15 +18,19 @@
 		<div class="calendar"></div>
 	</div>
 </div>
-<script>
-	// $('.calendar').fullCalendar({
-	// 		header: {
-	// 	    		left: 'title',
-	// 	    		center: 'prev next',
-	// 	    		right: 'today month,agendaWeek,agendaDay' 
-	// 	    	},
 
-	// 	    events: '/users/<%= @user.id %>/availabilities.json',
-	// 	});
+
+<script>
+
+	$('.calendar').fullCalendar({
+
+			header: {
+		    		left: 'title',
+		    		center: 'prev next',
+		    		right: 'today month,agendaWeek,agendaDay' 
+		    	},
+
+		    events: '/users/<%= @user.id %>/availabilities.json',
+		});
 	
 </script>
