@@ -26,49 +26,9 @@
 
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
-		<div class="calendar">
-			<% timezone = current_user.time_zone if current_user %>
+		<div id="calendar" class="calendar" data-user-id="<%= @user.id %>">
+<!-- pass the timezone params. pass the other event params via the 'data' attribute -->
 		</div>
 	</div>
 </div>
-<script>
 
-// 	timezone: "<%= timezone %>",
-
-	var currentLangCode = 'en';
-
-	function renderCalendar() {
-		$('.calendar').fullCalendar({
-
-			header: {
-				left: 'title',
-				center: 'prev next',
-				right: 'today month,agendaWeek,agendaDay' 
-			},
-			
-			defaultView: "agendaWeek",
-
-			lang: currentLangCode,
-			weekNumbers: true,
-			// events: '/users/<%= @user.id %>/availabilities.json',
-
-			displayEventEnd: true,
-			eventLimit: true,
-			eventOverlap: false,
-			overlap: false,
-			eventSources: [ 
-		{
-			url: '/users/<%= @user.id %>/availabilities.json',
-			// rendering: 'background',
-			rendering: 'background', 
-			color: '#6AA4C1',
-		}],
-	});
-	}
-
-	renderCalendar();
-
-
-
-
-</script>
