@@ -9,6 +9,8 @@ CalendarApp::Application.routes.draw do
   resources :users, only: [:index, :show] do 
   	resources :availabilities
   end
+
+  resources :bookings
   
   namespace :admin do
     root "base#index"
