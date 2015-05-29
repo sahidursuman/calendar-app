@@ -11,17 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150508032749) do
+ActiveRecord::Schema.define(version: 20150528181912) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "instructor_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "availabilities", ["user_id"], name: "index_availabilities_on_user_id"
+  add_index "availabilities", ["instructor_id"], name: "index_availabilities_on_instructor_id"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "availability_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -35,6 +44,19 @@ ActiveRecord::Schema.define(version: 20150508032749) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "instructors", force: :cascade do |t|
+    t.integer  "teacher_id"
+    t.text     "description"
+    t.string   "country_of_origin"
+    t.string   "first_language"
+    t.string   "subject_to_teach"
+    t.string   "education"
+    t.integer  "price_cents"
+    t.string   "skype"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

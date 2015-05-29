@@ -1,12 +1,12 @@
 class AvailabilitiesController < ApplicationController
-  before_action :load_user
+  before_action :load_instructor
   before_action :set_availability, only: [:destroy]
   before_action :current_user, except: [:index, :show]
 
   # GET /availabilities
   # GET /availabilities.json
   def index
-    @availabilities = @user.availabilities
+    @availabilities = @instructor.availabilities
   end
 
   # GET /availabilities/1
@@ -17,7 +17,7 @@ class AvailabilitiesController < ApplicationController
 
   # GET /availabilities/new
   def new
-    @availability = @user.availabilities.new
+    @availability = @instructor.availabilities.new
   end
 
   # GET /availabilities/1/edit
@@ -28,12 +28,12 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities
   # POST /availabilities.json
   def create
-    @availability = @user.availabilities.new(availability_params)
+    @availability = @instructor.availabilities.new(availability_params)
 
     respond_to do |format|
       if @availability.save
-        format.html { redirect_to user_availabilities_path, notice: 'Availability was successfully created.' }
-        format.json { render :show, status: :created, location: ([@user, @availability]) }
+        format.html { redirect_to instructor_availabilities_path, notice: 'Availability was successfully created.' }
+        format.json { render :show, status: :created, location: ([@instructor, @availability]) }
       else
         format.html { render :new }
         format.json { render json: @availability.errors, status: :unprocessable_entity }
@@ -47,8 +47,8 @@ class AvailabilitiesController < ApplicationController
   	@availability = Availability.find(params[:id])
     respond_to do |format|
       if @availability.update(availability_params)
-        format.html { redirect_to ([@user, @availability]), notice: 'Availability was successfully updated.' }
-        format.json { render :show, status: :ok, location: ([@user, @availability]) }
+        format.html { redirect_to ([@instructor, @availability]), notice: 'Availability was successfully updated.' }
+        format.json { render :show, status: :ok, location: ([@instructor, @availability]) }
       else
         format.html { render :edit }
         format.json { render json: @availability.errors, status: :unprocessable_entity }
@@ -77,7 +77,7 @@ class AvailabilitiesController < ApplicationController
       params.require(:availability).permit(:start_time, :end_time)
     end
 
-    def load_user
-    	@user = User.find(params[:user_id])
+    def load_instructor
+    	@instructor = instructor.find(params[:teacher_id])
     end
 end
