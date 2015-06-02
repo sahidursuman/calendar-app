@@ -12,6 +12,7 @@ $(document).on('ready page:load', function() {
 		},
 		
 		defaultView: "agendaWeek",
+		contentHeight: "auto",
 
 		lang: currentLangCode,
 		weekNumbers: true,
