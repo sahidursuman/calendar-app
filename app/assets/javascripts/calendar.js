@@ -1,3 +1,5 @@
+
+
 $(document).on('ready page:load', function() {
 
 	var calendar = $('.calendar'),
@@ -31,9 +33,10 @@ $(document).on('ready page:load', function() {
 	});
 };
 
+var currentLangCode = 'en';
+
 generateCalendar();
 
-	var currentLangCode = 'en';
 	// build the language selector's options
 	$.each($.fullCalendar.langs, function(langCode) {
 		var langText = langCode;
@@ -55,7 +58,7 @@ generateCalendar();
 		$('#lang-selector').append(
 			$('<option/>')
 				.attr('value', langCode)
-				.prop('selected', langCode == currentLangCode)
+				.prop('selected', langCode === currentLangCode)
 				.text(langText)
 		);
 	});
