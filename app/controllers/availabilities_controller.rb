@@ -78,6 +78,6 @@ class AvailabilitiesController < ApplicationController
     end
 
     def load_instructor
-    	@instructor = instructor.find(params[:teacher_id])
+    	@instructor = Instructor.find(params[:instructor_id])
     end
 end
