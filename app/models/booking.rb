@@ -1,7 +1,15 @@
 class Booking < ActiveRecord::Base
-belongs_to :instructor
+has_one :teacher, class_name: 'Instructor'
 belongs_to :student, class_name: 'User'
-belongs_to :availability
+has_one :availability
+
+  def timerange
+    TimeRange.new(start_time, end_time)
+  end
+
+
+
+
 
 
 end

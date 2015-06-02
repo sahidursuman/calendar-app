@@ -1,11 +1,14 @@
 class BookingsController < ApplicationController
+  before_action :load_instructor
+  
   def new
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @
+    @user = current_user
+    @booking.instructor = 
   end
 
   def edit
@@ -23,7 +26,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_time, :end_time)
   end
 
-  def find_availability
-    availabilities = Availability.all.wherez
+  def load_instructor
+    @instructor = Instructor.find(params[:instructor_id])
   end
 end
