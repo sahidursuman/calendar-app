@@ -17,4 +17,6 @@
 //= require common
 //= require moment
 //= require fullcalendar
+//= require fullcalendar/lang/zh-cn
+//= require fullcalendar/lang/zh-tw
 //= require_tree .

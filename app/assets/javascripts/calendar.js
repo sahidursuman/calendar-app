@@ -1,6 +1,7 @@
 $(document).on('ready page:load', function() {
 
 	var calendar = $('.calendar'),
+
 	userId = calendar && calendar.data('user-id');
 
 	 function generateCalendar(){ 
@@ -35,14 +36,30 @@ generateCalendar();
 	var currentLangCode = 'en';
 	// build the language selector's options
 	$.each($.fullCalendar.langs, function(langCode) {
+		var langText = langCode;
+
+		switch(langCode) {
+			case 'zh-cn':
+				langText = '简体中文';
+				break;
+
+			case 'zh-tw':
+				langText = '繁體中文';
+				break;
+
+			case 'en':
+				langText = 'English'
+				break;
+		}
+		
 		$('#lang-selector').append(
 			$('<option/>')
 				.attr('value', langCode)
 				.prop('selected', langCode == currentLangCode)
-				.text(langCode)
+				.text(langText)
 		);
 	});
-
+// $('#lang-selector > option[value="zh-cn"]').text('简体中文');
 
 	// rerender the calendar when the selected option changes
 	$('#lang-selector').on('change', function() {
