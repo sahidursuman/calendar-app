@@ -2,12 +2,12 @@
 <h1><i class="fa fa-home"></i> Index Page <small>Select a Teacher</small></h1>
 
 
-<% @instructor.each do |instructor| %>
+<% @instructors.each do |instructor| %>
 	<%= link_to instructor_path(instructor) do %>
 	  <div class="col-sm-3 col-sm-offset-1 btn btn-default">
-		  <h4><%= "#{instructor.first_name}, #{instructor.last_name}" %></h4>
+		  <h4><%= "#{instructor.teacher.first_name}, #{instructor.teacher.last_name}" %></h4>
 	    <p class="text-info">
-		    <%= instructor.time_zone %>
+		    <%= instructor.teacher.time_zone %>
 			</p>
 	  </div>
 	<% end %>

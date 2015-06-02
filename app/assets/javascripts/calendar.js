@@ -39,16 +39,16 @@ generateCalendar();
 		var langText = langCode;
 
 		switch(langCode) {
+			case 'en':
+				langText = 'English';
+				break;
+				
 			case 'zh-cn':
 				langText = '简体中文';
 				break;
 
 			case 'zh-tw':
 				langText = '繁體中文';
-				break;
-
-			case 'en':
-				langText = 'English'
 				break;
 		}
 		
