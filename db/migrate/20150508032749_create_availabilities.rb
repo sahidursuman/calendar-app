@@ -3,7 +3,7 @@ class CreateAvailabilities < ActiveRecord::Migration
     create_table :availabilities do |t|
       t.datetime :start_time
       t.datetime :end_time
-      t.references :user, index: true, foreign_key: true
+      t.references :instructor, index: true, foreign_key: true
 
       t.timestamps null: false
     end
