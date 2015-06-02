@@ -1,2 +1,14 @@
-<h1>Instructors#index</h1>
-<p>Find me in app/views/instructors/index.html.erb</p>
+<% title("Instructor index Page") %>
+<h1><i class="fa fa-home"></i> Index Page <small>Select a Teacher</small></h1>
+
+
+<% @instructor.each do |instructor| %>
+	<%= link_to instructor_path(instructor) do %>
+	  <div class="col-sm-3 col-sm-offset-1 btn btn-default">
+		  <h4><%= "#{instructor.first_name}, #{instructor.last_name}" %></h4>
+	    <p class="text-info">
+		    <%= instructor.time_zone %>
+			</p>
+	  </div>
+	<% end %>
+<% end %>
