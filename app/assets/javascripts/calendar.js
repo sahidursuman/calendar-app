@@ -2,7 +2,7 @@ $(document).on('ready page:load', function() {
 
 	var calendar = $('.calendar'),
 
-	userId = calendar && calendar.data('user-id');
+	instructorId = calendar && calendar.data('instructor-id');
 
 	 function generateCalendar(){ 
 		calendar.fullCalendar({
@@ -22,7 +22,7 @@ $(document).on('ready page:load', function() {
 		eventOverlap: false,
 		overlap: false,
 		eventSources: [{
-			url: '/users/' + userId + '/availabilities.json',
+			url: '/instructors/' + instructorId + '/availabilities.json',
 			// rendering: 'background',
 			rendering: 'background', 
 			// color: '#6AA4C1',
@@ -31,24 +31,24 @@ $(document).on('ready page:load', function() {
 	});
 };
 
+var currentLangCode = 'en';
 generateCalendar();
 
-	var currentLangCode = 'en';
 	// build the language selector's options
 	$.each($.fullCalendar.langs, function(langCode) {
 		var langText = langCode;
 
 		switch(langCode) {
-			case 'en':
-				langText = 'English';
-				break;
-				
 			case 'zh-cn':
 				langText = '简体中文';
 				break;
 
 			case 'zh-tw':
 				langText = '繁體中文';
+				break;
+
+			case 'en':
+				langText = 'English'
 				break;
 		}
 		
