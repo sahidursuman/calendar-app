@@ -8,7 +8,7 @@ $(document).on('ready page:load', function() {
 		header: {
 			left: 'title',
 			center: 'prev next',
-			right: 'today month,agendaWeek,agendaDay' 
+			right: 'today agendaWeek' 
 		},
 		
 		defaultView: "agendaWeek",
@@ -23,7 +23,8 @@ $(document).on('ready page:load', function() {
 			url: '/users/' + userId + '/availabilities.json',
 			// rendering: 'background',
 			rendering: 'background', 
-			color: '#6AA4C1',
+			// color: '#6AA4C1',
+			className: 'availability-color',
 		}],
 	});
 };

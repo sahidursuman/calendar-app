@@ -32,6 +32,8 @@ gem 'fullcalendar-rails'
 gem 'jquery-ui-themes', git: "https://github.com/fatdude/jquery-ui-themes-rails"
 gem 'jquery-ui-rails'
 
+# gem 'activemerchant'
+
 group :development, :test do
   gem 'byebug', '4.0.5'
   gem 'web-console', '2.1.2'
