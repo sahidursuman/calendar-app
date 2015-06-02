@@ -17,10 +17,10 @@
       <tr>
         <td><%= availability.start_time %></td>
         <td><%= availability.end_time %></td>
-        <td><%= availability.user.first_name %></td>
-        <td><%= link_to 'Show', user_availability_path(@user, availability) %></td>
-        <td><%= link_to 'Edit', edit_user_availability_path(@user, availability) %></td>
-        <td><%= link_to 'Destroy', user_availability_path(@user, availability), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= availability.instructor.teacher.first_name %></td>
+        <td><%= link_to 'Show', instructor_availability_path(@instructor, availability) %></td>
+        <td><%= link_to 'Edit', edit_instructor_availability_path(@instructor, availability) %></td>
+        <td><%= link_to 'Destroy', instructor_availability_path(@instructor, availability), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,8 +28,8 @@
 
 <br>
 <ul>
-<li><%= link_to 'New Availability', new_user_availability_path %></li>	
-<li><%= link_to 'Back to User Page', user_path(@user) %></li>
+<li><%= link_to 'New Availability', new_instructor_availability_path %></li>	
+<li><%= link_to 'Back to instructor Page', instructor_path(@instructor) %></li>
 </ul>
 
 
