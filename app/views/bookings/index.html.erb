@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Bookings</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.start_time %></td>
+        <td><%= booking.end_time %></td>
+        <td><%= booking.instructor.teacher.first_name %></td>
+        <td><%= link_to 'Show', instructor_booking_path(@instructor, booking) %></td>
+        <td><%= link_to 'Edit', edit_instructor_booking_path(@instructor, booking) %></td>
+        <td><%= link_to 'Destroy', instructor_booking_path(@instructor, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<ul>
+<li><%= link_to 'New booking', new_instructor_booking_path %></li>  
+<li><%= link_to 'Back to instructor Page', instructor_path(@instructor) %></li>
+</ul>
