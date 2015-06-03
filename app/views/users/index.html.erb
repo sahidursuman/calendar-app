@@ -1,14 +1,21 @@
 <% title("User index Page") %>
-<h1><i class="fa fa-home"></i> Index Page <small>Select a Teacher</small></h1>
+<h1><i class="fa fa-home"></i> Users Index <br><small>Select a Teacher</small></h1>
+<table class="table table-striped">
+	<tr>
+		<th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>		
+    <th>Email</th>
+    <th>User Page</th>
+  </tr>
+  <% @users.each do |user| %>
+		<tr>
+			<td><%= user.id %></td>
+			<td><%= user.first_name %></td>
+			<td><%= user.last_name %></td>
+			<td><%= user.email %></td>
+			<td> <%= link_to "Show", user_path(user) %></td>
+		</tr>
+ <% end %>
+</table>
 
-
-<% @users.each do |user| %>
-	<%= link_to user_path(user) do %>
-	  <div class="col-sm-3 col-sm-offset-1 btn btn-default">
-		  <h4><%= "#{user.first_name}, #{user.last_name}" %></h4>
-	    <p class="text-info">
-		    <%= user.time_zone %>
-			</p>
-	  </div>
-	<% end %>
-<% end %>
