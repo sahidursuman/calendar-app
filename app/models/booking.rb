@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-has_one :teacher, class_name: 'Instructor'
+has_one :instructor
 belongs_to :student, class_name: 'User'
 has_one :availability
 
