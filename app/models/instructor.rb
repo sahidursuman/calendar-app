@@ -6,7 +6,7 @@ class Instructor < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 
 
-  def double_availability?(requested_availability)
+  def availability_open?(requested_availability)
     new_availability = requested_availability.timerange    
 
     no_other_availabilities = self.availabilities.none? do |availability|
