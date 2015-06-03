@@ -20,8 +20,6 @@ class BookingsController < ApplicationController
         format.json { render json: @booking.errors, status: :unprocessable_entity }
       end
     end
-
-
   end
   
   def index
