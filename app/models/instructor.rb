@@ -3,5 +3,6 @@ class Instructor < ActiveRecord::Base
 	has_many :bookings
 	has_many :availabilities
 	has_many :users, through: :bookings
+	mount_uploader :avatar, AvatarUploader
 
 end
