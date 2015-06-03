@@ -136,7 +136,7 @@ $navbar-border-radius: 0px;
 // Navbar: Default navbar
 // -> Basics
 $navbar-default-color: #777777;
-$navbar-default-bg: #f8f8f8;
+$navbar-default-bg: #fff;
 $navbar-default-border: darken($navbar-default-bg, 7%);
 // -> Links
 $navbar-default-link-color: #777777;
@@ -147,7 +147,7 @@ $navbar-default-link-active-bg: darken($navbar-default-bg, 7%);
 $navbar-default-link-disabled-color: #cccccc;
 $navbar-default-link-disabled-bg:$navbar-default-bg;
 // -> Brand
-$navbar-default-brand-color: $navbar-default-link-color;
+$navbar-default-brand-color: #337AB7; //was: $navbar-default-link-color;
 $navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%);
 $navbar-default-brand-hover-bg: $navbar-default-bg;
 // -> Toggle
@@ -239,7 +239,7 @@ $dropdown-border: #373737; // Dropdown menu border color
 $dropdown-fallback-border: #cccccc; // Dropdown menu border color for IE8
 $dropdown-caret-color: #dddddd; // Indicator arrow for showing an element has a dropdown
 $dropdown-divider-bg: #e5e5e5; // Dropdown divider top border color
-$dropdown-header-color: #dddddd; // Text color for headers within dropdown menus
+$dropdown-header-color: $navbar-default-link-color; // Text color for headers within dropdown menus. was: #ddd
 // -> Dropdown items
 $dropdown-link-color: $text-color; // Dropdown text color
 $dropdown-link-hover-color: darken($dropdown-link-color,5%); // Hovered dropdown menu entry text color

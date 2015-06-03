@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @user = current_user
-    @booking.instructor = 
+    # @booking.instructor = 
   end
 
   def edit
