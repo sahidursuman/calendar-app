@@ -16,17 +16,18 @@ class Instructor < ActiveRecord::Base
     no_other_availabilities
   end
 
-  def double_booking?(requested_booking)
+  def bookable?(requested_booking)
     new_booking = requested_booking.timerange
 
     no_double_booking = self.bookings.none? do |booking|
       booking.timerange.overlap?(new_booking)
     end
     
-    no_double_booking
+    available_booking = self.availabilities.any? do |availability|
+      availability.timerange.in_range?(new_booking)
+    end 
+
+    no_double_booking && available_booking
   end
 
-  def booking_available?(requested_booking)
-    
-  end
 end
