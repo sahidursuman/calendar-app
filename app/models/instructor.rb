@@ -12,7 +12,7 @@ class Instructor < ActiveRecord::Base
     no_other_availabilities = self.availabilities.none? do |availability|
       availability.timerange.overlap?(new_availability)
     end
-
+binding.pry
     no_other_availabilities
   end
 
