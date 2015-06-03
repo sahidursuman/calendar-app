@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528181912) do
+ActiveRecord::Schema.define(version: 20150603062108) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "start_time"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150528181912) do
     t.string   "skype"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "avatar"
   end
 
   create_table "posts", force: :cascade do |t|
