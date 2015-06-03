@@ -9,7 +9,14 @@ has_one :availability
 
   def is_available?
     requested_booking = self.timerange
-    other_instructor_bookings = self.instructor.booking
+    
+    other_instructor_bookings = self.instructor.bookings.all
+    sorted_instructor_bookings = other_instructor_bookings.map! do |booking|
+      range = []
+      range << booking.timerange
+      range.sort
+      end 
+    
   end
 
 
