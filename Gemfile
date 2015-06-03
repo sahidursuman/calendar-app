@@ -31,6 +31,9 @@ gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 gem 'jquery-ui-themes', git: "https://github.com/fatdude/jquery-ui-themes-rails"
 gem 'jquery-ui-rails'
+gem 'bootstrap_form'
+gem 'country_select', github: 'stefanpenner/country_select'
+
 
 # gem 'activemerchant'
 
