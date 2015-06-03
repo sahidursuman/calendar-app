@@ -21,13 +21,19 @@ $(document).on('ready page:load', function() {
 		eventLimit: true,
 		eventOverlap: false,
 		overlap: false,
-		eventSources: [{
-			url: '/instructors/' + instructorId + '/availabilities.json',
-			// rendering: 'background',
-			rendering: 'background', 
-			// color: '#6AA4C1',
-			className: 'availability-color',
-		}],
+		eventSources: [
+			{
+				url: '/instructors/' + instructorId + '/availabilities',
+				rendering: 'background',
+				className: 'availability-color'
+			},
+			
+			{
+				url: '/instructors/' + instructorId + '/bookings',
+				backgroundColor: '#9DD6F2',
+				className: 'booking-color'
+			}
+		],
 	});
 };
 

@@ -61,7 +61,7 @@ class AvailabilitiesController < ApplicationController
   def destroy
     @availability.destroy
     respond_to do |format|
-      format.html { redirect_to user_availabilities_path, notice: 'Availability was successfully destroyed.' }
+      format.html { redirect_to instructor_availabilities_path, notice: 'Availability was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

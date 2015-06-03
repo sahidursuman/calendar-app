@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-has_one :teacher, class_name: 'Instructor'
+belongs_to :instructor
 belongs_to :student, class_name: 'User'
 has_one :availability
 
@@ -7,7 +7,17 @@ has_one :availability
     TimeRange.new(start_time, end_time)
   end
 
-
+  def is_available?
+    requested_booking = self.timerange
+    
+    other_instructor_bookings = self.instructor.bookings.all
+    sorted_instructor_bookings = other_instructor_bookings.map! do |booking|
+      range = []
+      range << booking.timerange
+      range.sort
+      end 
+    
+  end
 
 
 

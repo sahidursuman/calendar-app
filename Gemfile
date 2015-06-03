@@ -34,7 +34,7 @@ gem 'jquery-ui-rails'
 gem 'bootstrap_form'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'carrierwave'
-
+gem 'mini_magick'
 # gem 'activemerchant'
 
 group :development, :test do

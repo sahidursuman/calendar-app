@@ -6,9 +6,24 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = @instructor.bookings.new(booking_params)
     @user = current_user
-    # @booking.instructor = 
+    @booking.student_id = @user.id
+    @booking.instructor = @instructor
+
+    respond_to do |format|
+      if @booking.save
+        format.html { redirect_to instructor_bookings_path, notice: 'booking was successfully created.' }
+        format.json { render :show, status: :created, location: ([@instructor, @booking]) }
+      else
+        format.html { render :new }
+        format.json { render json: @booking.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+  def index
+    @bookings = @instructor.bookings
   end
 
   def edit
