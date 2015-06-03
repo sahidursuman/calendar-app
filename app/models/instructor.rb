@@ -6,8 +6,15 @@ class Instructor < ActiveRecord::Base
 	mount_uploader :avatar, AvatarUploader
 
 
-def availability_is_createable(requested_availability)
+  def double_availability?(requested_availability)
+    new_availability = requested_availability.timerange    
 
-end
+    no_other_availabilities = self.availabilities.none? do |availability|
+      availability.timerange.overlap?(new_availability)
+    end
 
+    no_other_availabilities
+  end
+
+ 
 end
