@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :load_instructor
   
   def new
-    @booking = Booking.new
+    @booking = @instructor.bookings.new
   end
 
   def create

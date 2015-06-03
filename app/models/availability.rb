@@ -12,7 +12,7 @@ class Availability < ActiveRecord::Base
   private
   def consistent
     unless instructor.availability_open?(self)
-      errors.add(:instructor, "is unavailable for that booking")
+      errors.add(:availability, "cannot be made for that time")
     end
 
     if start_time > end_time
