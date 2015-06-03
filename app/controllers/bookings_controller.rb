@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = @instructor.bookings.new(booking_params)
     @user = current_user
     @booking.student_id = @user.id
-    @booking.teacher = @instructor
+    @booking.instructor = @instructor
 
     respond_to do |format|
       if @booking.save

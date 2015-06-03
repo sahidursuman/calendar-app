@@ -7,7 +7,8 @@ has_one :availability
     TimeRange.new(start_time, end_time)
   end
 
-
+  def is_available?
+  end
 
 
 

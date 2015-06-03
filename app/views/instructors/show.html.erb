@@ -42,6 +42,24 @@
 
 <% end %>
 
+<%= form_for([@instructor, Booking.new]) do |f| %>
+  
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		<div id="calendar" class="calendar" data-instructor-id="<%= @instructor.id %>">
