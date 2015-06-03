@@ -1,5 +1,5 @@
 class Booking < ActiveRecord::Base
-has_one :instructor
+belongs_to :instructor
 belongs_to :student, class_name: 'User'
 has_one :availability
 
@@ -8,6 +8,8 @@ has_one :availability
   end
 
   def is_available?
+    requested_booking = self.timerange
+    other_instructor_bookings = self.instructor.booking
   end
 
 
