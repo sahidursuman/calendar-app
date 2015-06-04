@@ -4,7 +4,7 @@ $(document).on('ready page:load', function() {
 
 	instructorId = calendar && calendar.data('instructor-id');
 
-	 function generateCalendar(){ 
+	 function generateInstructorCalendar(){ 
 		calendar.fullCalendar({
 		header: {
 			left: 'title',
@@ -38,7 +38,7 @@ $(document).on('ready page:load', function() {
 };
 
 var currentLangCode = 'en';
-generateCalendar();
+generateInstructorCalendar();
 
 	// build the language selector's options
 	$.each($.fullCalendar.langs, function(langCode) {
@@ -72,7 +72,7 @@ generateCalendar();
 		if (this.value) {
 			currentLangCode = this.value;
 			$('.calendar').fullCalendar('destroy');
-			generateCalendar();
+			generateInstructorCalendar();
 		}
 	});	
 

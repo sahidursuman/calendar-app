@@ -15,9 +15,11 @@ class BookingsController < ApplicationController
       if @booking.save
         format.html { redirect_to instructor_bookings_path, notice: 'booking was successfully created.' }
         format.json { render :show, status: :created, location: ([@instructor, @booking]) }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @booking.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
