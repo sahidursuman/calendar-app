@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
-
+  # before_action :set_user_timezone
 
   # Devise permitted params
   def configure_permitted_parameters
@@ -54,5 +54,9 @@ class ApplicationController < ActionController::Base
   end
 	
   helper_method :require_admin!
+
+  # def set_user_timezone
+  #   Time.zone = current_user.time_zone if current_user.present?
+  # end
 
 end
