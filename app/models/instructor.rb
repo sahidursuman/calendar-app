@@ -4,6 +4,7 @@ class Instructor < ActiveRecord::Base
 	has_many :availabilities
 	has_many :users, through: :bookings
 	mount_uploader :avatar, AvatarUploader
+	mount_uploader :resume, ResumeUploader
 
 
   def availability_open?(requested_availability)
