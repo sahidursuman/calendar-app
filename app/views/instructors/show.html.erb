@@ -24,24 +24,6 @@
 
 <br>
 
-<%= form_for([@instructor, Availability.new]) do |f| %>
-  
-  <div class="field">
-    <%= f.label :start_time %>
-    <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :end_time %>
-    <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
-
 <%= form_for([@instructor, Booking.new]) do |f| %>
   
   <div class="field">
