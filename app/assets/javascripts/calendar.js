@@ -20,6 +20,7 @@ $(document).on('ready page:load', function() {
 		
 		defaultView: "agendaWeek",
 		contentHeight: "auto",
+		timezone: ,
 
 		lang: currentLangCode,
 		weekNumbers: true,

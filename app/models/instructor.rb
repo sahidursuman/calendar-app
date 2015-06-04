@@ -5,7 +5,6 @@ class Instructor < ActiveRecord::Base
 	has_many :users, through: :bookings
 	mount_uploader :avatar, AvatarUploader
 
-
   def availability_open?(requested_availability)
     new_availability = requested_availability.timerange    
 
