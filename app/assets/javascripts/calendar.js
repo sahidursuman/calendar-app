@@ -1,11 +1,11 @@
 $(document).on('ready page:load', function() {
 
-	var calendar = $('.calendar'),
+	var Icalendar = $('.Icalendar'),
 
-	instructorId = calendar && calendar.data('instructor-id');
+	instructorId = Icalendar && Icalendar.data('instructor-id');
 
 	 function generateInstructorCalendar(){ 
-		calendar.fullCalendar({
+		Icalendar.fullCalendar({
 		header: {
 			left: 'title',
 			center: 'prev next',
@@ -34,6 +34,11 @@ $(document).on('ready page:load', function() {
 				className: 'booking-color'
 			}
 		],
+		dayClick: function(date, jsEvent, view) {
+
+        $('#availabilityModal').modal('show');
+    
+    },
 	});
 };
 
@@ -67,11 +72,11 @@ generateInstructorCalendar();
 	});
 // $('#lang-selector > option[value="zh-cn"]').text('简体中文');
 
-	// rerender the calendar when the selected option changes
+	// rerender the Icalendar when the selected option changes
 	$('#lang-selector').on('change', function() {
 		if (this.value) {
 			currentLangCode = this.value;
-			$('.calendar').fullCalendar('destroy');
+			$('.Icalendar').fullCalendar('destroy');
 			generateInstructorCalendar();
 		}
 	});	
