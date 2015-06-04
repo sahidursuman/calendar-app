@@ -32,7 +32,7 @@ class AvailabilitiesController < ApplicationController
 
     respond_to do |format|
       if @availability.save
-        format.html { redirect_to instructor_availabilities_path, notice: 'Availability was successfully created.' }
+        format.html { redirect_to instructor_path(@instructor), notice: 'Availability was successfully created.' }
         format.json { render :show, status: :created, location: ([@instructor, @availability]) }
       else
         format.html { render :new }

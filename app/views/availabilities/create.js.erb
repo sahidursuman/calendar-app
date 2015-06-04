@@ -1,0 +1,8 @@
+<% if @availability.errors.any? %>
+  <% @availability.errors.full_messages.each do |error| %>
+    alert("<%= error %>" );
+  <% end %>
+<% else %>
+  $('#Icalendar').fullCalendar('refetchEvents');
+  $('#availabilityModal').modal('hide')
+<% end %>
