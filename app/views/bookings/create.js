@@ -3,6 +3,6 @@
     alert("<%= error %>" );
   <% end %>
 <% else %>
-  $('.Icalendar').fullCalendar('refetchEvents');
+  $('.Ucalendar').fullCalendar('refetchEvents');
   $('#bookingModal').modal('hide')
 <% end %>

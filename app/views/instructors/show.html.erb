@@ -34,7 +34,7 @@
   <!-- This code renders the calendar the Instructor will see-->
   <div class="row">
   	<div class="col-sm-8 col-sm-offset-1">
-  		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>">
+  		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>" data-instructor-timezone="<%= @instructor.teacher.time_zone %>">
   <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
   		</div>
   	</div>
@@ -45,7 +45,7 @@
 <% else %>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-1">
-      <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>">
+      <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>" data-user-timezone="<%= current_user.time_zone if current_user.present? %>">
   <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
       </div>
     </div>
