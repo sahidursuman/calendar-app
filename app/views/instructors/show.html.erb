@@ -24,12 +24,22 @@
 
 <br>
 
+<!-- This code renders the calendar the Instructor will see-->
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>">
 <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
 		</div>
 	</div>
+</div>
+
+<!-- This code renders the calendar the Users will see-->
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-1">
+    <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>">
+<!-- pass the timezone params. pass the other event params via the 'data' attribute -->
+    </div>
+  </div>
 </div>
 
 <!-- Timeslot modal -->
@@ -67,7 +77,7 @@
 </div>
 
 <!-- Booking modal -->
-<div id="availabilityModal" class="modal fade">
+<div id="bookingModal" class="modal fade">
  <div class="modal-dialog modal-lg">
    <div class="modal-content">
      <div class="modal-header">
