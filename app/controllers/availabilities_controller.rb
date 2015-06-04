@@ -28,7 +28,7 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities
   # POST /availabilities.json
   def create
-    @availability = @instructor.availabilities.new(availability_params)
+    @availability = @instructor.availabilities.create availability_params
 
     respond_to do |format|
       if @availability.save

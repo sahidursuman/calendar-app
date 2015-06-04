@@ -10,7 +10,6 @@ validate :consistent
   end
 
   private
-  
   def consistent
     unless instructor.bookable?(self)
       errors.add(:instructor, "is unavailable for that booking")
@@ -20,5 +19,4 @@ validate :consistent
       errors.add(:start_time, "Cannot be greater than the end time")
     end
   end
-
 end
