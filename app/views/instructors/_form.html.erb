@@ -18,6 +18,8 @@
 	<%= f.file_field :resume %>
 	<%= f.hidden_field :resume_cache %>
 
+	<%= f.file_field :credential %>
+	<%= f.hidden_field :credential %>
 
 	<%= f.form_group :country, label: {text: "Country"} do %>
 	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB"], prompt: 'Select a country'}, class: 'form-control' %>
