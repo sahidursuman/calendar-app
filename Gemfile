@@ -33,7 +33,8 @@ gem 'jquery-ui-themes', git: "https://github.com/fatdude/jquery-ui-themes-rails"
 gem 'jquery-ui-rails'
 gem 'bootstrap_form'
 gem 'country_select', github: 'stefanpenner/country_select'
-gem 'carrierwave'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
 
 # gem 'activemerchant'
 
@@ -48,6 +49,7 @@ group :development, :test do
   # Spring: https://github.com/rails/spring
   gem 'spring', '1.3.4'
 end
+
 gem 'pry-rails', :group => :development
 
 # SQLite 3

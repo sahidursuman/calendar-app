@@ -7,6 +7,7 @@
 				<%="#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %> &nbsp;
 			</h3>
 		</div>
+		<%= image_tag @instructor.avatar_url(:thumb), class: 'img-rounded' %>
 		<p><%= "#{@instructor.teacher.first_name} is in #{@instructor.teacher.time_zone}." %></p>
 			<%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
 	</div>

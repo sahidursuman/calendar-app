@@ -42,7 +42,7 @@ class InstructorsController < ApplicationController
 private
 
   def instructor_params
-    params.require(:instructor).permit(:description, :first_language, :subject_to_teach, :education, :price_cents, :skype)
+    params.require(:instructor).permit(:description, :first_language, :subject_to_teach, :education, :price_cents, :skype, :avatar, :avatar_cache, :remove_avatar)
   end
 
 end
