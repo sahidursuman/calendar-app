@@ -19,5 +19,4 @@ class Availability < ActiveRecord::Base
       errors.add(:start_time, "cannot be greater than the end time")
     end
   end
-
 end

@@ -15,7 +15,7 @@ validate :consistent
       errors.add(:instructor, "is unavailable for that booking")
     end
 
-    if start_time > end_time
+    if start_time >= end_time
       errors.add(:start_time, "Cannot be greater than the end time")
     end
   end
