@@ -24,23 +24,27 @@
 
 <br>
 
-<!-- This code renders the calendar the Instructor will see-->
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-1">
-		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>">
-<!-- pass the timezone params. pass the other event params via the 'data' attribute -->
-		</div>
-	</div>
-</div>
+<% if current_user == @instructor.teacher %>
+  <!-- This code renders the calendar the Instructor will see-->
+  <div class="row">
+  	<div class="col-sm-8 col-sm-offset-1">
+  		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>">
+  <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
+  		</div>
+  	</div>
+  </div>
+
 
 <!-- This code renders the calendar the Users will see-->
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-1">
-    <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>">
-<!-- pass the timezone params. pass the other event params via the 'data' attribute -->
+<% else %>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-1">
+      <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>">
+  <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
+      </div>
     </div>
   </div>
-</div>
+<% end %>
 
 <!-- Timeslot modal -->
 <div id="availabilityModal" class="modal fade">

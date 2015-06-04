@@ -1,9 +1,10 @@
 $(document).on('ready page:load', function() {
 
-	var Icalendar = $('.Icalendar'),
-	var Ucalendar = $('.Ucalendar'),
+	var Icalendar = $('.Icalendar');
+	var Ucalendar = $('.Ucalendar');
 
 	instructorId = Icalendar && Icalendar.data('instructor-id');
+	instructorId2 = Ucalendar && Ucalendar.data('instructor-id');
 
 
 // This renders on the instructor side
@@ -103,13 +104,13 @@ generateInstructorCalendar();
 		overlap: false,
 		eventSources: [
 			{
-				url: '/instructors/' + instructorId + '/availabilities',
+				url: '/instructors/' + instructorId2 + '/availabilities',
 				rendering: 'background',
 				className: 'availability-color'
 			},
 			
 			{
-				url: '/instructors/' + instructorId + '/bookings',
+				url: '/instructors/' + instructorId2 + '/bookings',
 				backgroundColor: '#9DD6F2',
 				className: 'booking-color'
 			}
