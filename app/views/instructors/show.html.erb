@@ -3,20 +3,29 @@
 <div class="row">
 	<div class="col-sm-10 col-sm-offset-1">
 		<div class="page-header">
-		<div class="row">
-			<div class="col-sm-3 ">
+			<div class="row">
+				<div class="col-sm-3 ">
 				
-		<%= image_tag @instructor.avatar_url(:thumb), class: 'img-rounded' %>
+					<%= image_tag @instructor.avatar_url(:thumb), class: 'img-rounded' %>
+				</div>
+				<h2 class="col-sm-8">
+					<%="#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %> &nbsp;
+				</h2>
 			</div>
-			<h2 class="col-sm-8">
-				<%="#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %> &nbsp;
-			</h2>
-		</div>
 		</div>
 		<p><%= "#{@instructor.teacher.first_name} is in #{@instructor.teacher.time_zone}." %></p>
-			<%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
+
+		<% if @instructor.resume? %>
+			<%= link_to @instructor.resume_url, class: 'btn btn-primary btn-xs', target: "_blank" do %>
+				<span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download <%= @instructor.teacher.first_name.capitalize %>'s Resume
+			<% end %>
+		<% else %>	
+			<i><%= "#{@instructor.teacher.first_name.capitalize} hasn't uploaded a resume yet." %></i>
+		<% end %>
+	<br><br>
+		<%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
+		</div>
 	</div>
-</div>
 <br>
 
 <div class="row">
