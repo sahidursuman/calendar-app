@@ -23,6 +23,9 @@
 			<i><%= "#{@instructor.teacher.first_name.capitalize} hasn't uploaded a resume yet." %></i>
 		<% end %>
 	<br><br>
+
+<%= @instructor.subject_to_teach %>
+
 		<%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
 		</div>
 	</div>

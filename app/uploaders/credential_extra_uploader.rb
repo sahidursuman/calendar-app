@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class CredentialUploader < CarrierWave::Uploader::Base
+class CredentialExtraUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

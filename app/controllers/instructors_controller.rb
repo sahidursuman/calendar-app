@@ -43,7 +43,7 @@ private
 
   def instructor_params
     params.require(:instructor).permit(:description, :first_language, :subject_to_teach, :education, :price_cents, :skype, :avatar, :avatar_cache, :remove_avatar, 
-    	:resume, :resume_cache, :remove_resume, :credential, :credential_cache, :remove_credential)
+    	:resume, :resume_cache, :remove_resume, :credential, :credential_cache, :remove_credential, :credential_extra, :credential_extra_cache, :remove_credential_extra)
   end
 
 end
