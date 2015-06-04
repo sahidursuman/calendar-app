@@ -19,8 +19,8 @@ $(document).on('ready page:load', function() {
 		},
 		
 		defaultView: "agendaWeek",
+		timezone: instructorTimeZone,
 		contentHeight: "auto",
-		timezone: ,
 
 		lang: currentLangCode,
 		weekNumbers: true,
@@ -60,6 +60,7 @@ generateInstructorCalendar();
 		},
 		
 		defaultView: "agendaWeek",
+		timezone: userTimeZone,
 		contentHeight: "auto",
 
 		lang: currentLangCode,
