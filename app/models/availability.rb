@@ -15,8 +15,8 @@ class Availability < ActiveRecord::Base
       errors.add(:availability, "cannot be made for that time")
     end
 
-    if start_time > end_time
-      errors.add(:start_time, "Cannot be greater than the end time")
+    if start_time >= end_time
+      errors.add(:start_time, "cannot be greater than the end time")
     end
   end
 

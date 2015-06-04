@@ -28,15 +28,17 @@ class AvailabilitiesController < ApplicationController
   # POST /availabilities
   # POST /availabilities.json
   def create
-    @availability = @instructor.availabilities.create availability_params
+    @availability = @instructor.availabilities.build(availability_params)
 
     respond_to do |format|
       if @availability.save
         format.html { redirect_to instructor_path(@instructor), notice: 'Availability was successfully created.' }
         format.json { render :show, status: :created, location: ([@instructor, @availability]) }
+        format.js {}
       else
         format.html { render :new }
         format.json { render json: @availability.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
