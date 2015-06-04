@@ -10,13 +10,19 @@
 		<i>resume uploaded</i>
 		<%= f.check_box :remove_resume %>
 	<% end %>
-	<%= f.file_field :avatar  %>
+
+
+	<%= f.file_field :avatar %>
 	<%= f.hidden_field :avatar_cache %>
+
 	<%= f.file_field :resume %>
 	<%= f.hidden_field :resume_cache %>
+
+
 	<%= f.form_group :country, label: {text: "Country"} do %>
 	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB"], prompt: 'Select a country'}, class: 'form-control' %>
   <% end %>
+
 	<%= f.text_field :first_language %>
 	<%= f.text_field :subject_to_teach %>
 	<%= f.text_field :education %>
