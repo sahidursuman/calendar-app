@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604202101) do
+ActiveRecord::Schema.define(version: 20150604204705) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "start_time"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150604202101) do
     t.string   "avatar"
     t.string   "resume"
     t.string   "credential"
+    t.string   "credential_extra"
   end
 
   create_table "posts", force: :cascade do |t|
