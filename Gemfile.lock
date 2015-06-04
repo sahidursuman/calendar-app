@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: a1b96d05d021f0ab53c8a2ef460bc96664e52b79
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/stefanpenner/country_select.git
   revision: fad7c1d4aa24af9c84b1718176392d56f201a1f3
   specs:
@@ -69,11 +79,6 @@ GEM
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -233,7 +238,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.4.1)
   bootstrap_form
   byebug (= 4.0.5)
-  carrierwave
+  carrierwave!
   coffee-rails (= 4.1.0)
   country_select!
   devise (= 3.4.1)
