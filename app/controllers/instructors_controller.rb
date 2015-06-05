@@ -7,6 +7,7 @@ class InstructorsController < ApplicationController
   def show
     @instructor = Instructor.find(params[:id])
     @availabilities = @instructor.availabilities
+    @first_name = @instructor.teacher.first_name.capitalize
   end
 
   def new
