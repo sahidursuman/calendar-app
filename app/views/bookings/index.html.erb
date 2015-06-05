@@ -18,7 +18,7 @@
         <td><%= booking.start_time %></td>
         <td><%= booking.end_time %></td>
         <td><%= booking.instructor.teacher.first_name %></td>
-        <td><%= link_to 'Show', instructor_booking_path(@instructor, booking) %></td>
+        <td><%= link_to 'Show', instructor_booking_path(booking.instructor.teacher.id) %></td>
         <td><%= link_to 'Edit', edit_instructor_booking_path(@instructor, booking) %></td>
         <td><%= link_to 'Destroy', instructor_booking_path(@instructor, booking), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
