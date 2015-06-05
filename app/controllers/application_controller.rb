@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
-  # before_action :set_user_timezone
+  before_action :set_user_timezone
 
   # Devise permitted params
   def configure_permitted_parameters
@@ -29,6 +29,10 @@ class ApplicationController < ActionController::Base
   # Redirects on successful sign in
   def after_sign_in_path_for(resource)
     instructors_path
+  end
+  
+  def set_user_timezone
+    Time.zone = current_user.time_zone if current_user.present?
   end
 
   # Auto-sign out locked users
@@ -55,8 +59,6 @@ class ApplicationController < ActionController::Base
 	
   helper_method :require_admin!
 
-  # def set_user_timezone
-  #   Time.zone = current_user.time_zone if current_user.present?
-  # end
+  
 
 end

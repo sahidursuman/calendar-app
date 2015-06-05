@@ -8,7 +8,6 @@ class Instructor < ActiveRecord::Base
 	mount_uploader :credential, CredentialUploader
 	mount_uploader :credential_extra, CredentialExtraUploader
 
-
   def availability_open?(requested_availability)
     new_availability = requested_availability.timerange    
 
