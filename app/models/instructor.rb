@@ -18,6 +18,15 @@ class Instructor < ActiveRecord::Base
     no_other_availabilities
   end
 
+	def country_name
+		if country_of_origin.length <= 4
+			ISO3166::Country[country_of_origin]
+		else
+			country_of_origin
+		end
+    # country.translations[I18n.locale.to_s] || country.name
+  end
+
   def bookable?(requested_booking)
     new_booking = requested_booking.timerange
 

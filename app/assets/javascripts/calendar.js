@@ -13,9 +13,9 @@ $(document).on('ready page:load', function() {
 	 function generateInstructorCalendar(){ 
 		Icalendar.fullCalendar({
 		header: {
-			left: 'title',
-			center: 'prev next',
-			right: 'today agendaWeek' 
+			left: 'prev next',
+			center: 'title',
+			right: 'today' 
 		},
 		
 		defaultView: "agendaWeek",
@@ -25,13 +25,16 @@ $(document).on('ready page:load', function() {
 		weekNumbers: true,
 		displayEventEnd: true,
 		eventLimit: true,
+
+		allDaySlot: false,
 		eventOverlap: false,
 		overlap: false,
 		eventSources: [
 			{
 				url: '/instructors/' + instructorId + '/availabilities',
 				rendering: 'background',
-				className: 'availability-color'
+				className: 'availability-color',
+				editable: true,
 			},
 			
 			{
@@ -40,9 +43,9 @@ $(document).on('ready page:load', function() {
 				className: 'booking-color'
 			}
 		],
-		dayClick: function(date, jsEvent, view) {
-      $('#availabilityModal').modal('show');
-    },
+		// dayClick: function(date, jsEvent, view) {
+  //     $('#availabilityModal').modal('show');
+  //   },
 	});
 };
 
@@ -55,7 +58,7 @@ generateInstructorCalendar();
 		header: {
 			left: 'title',
 			center: 'prev next',
-			right: 'today agendaWeek' 
+			right: 'today' 
 		},
 		
 		defaultView: "agendaWeek",
