@@ -13,25 +13,29 @@ $(document).on('ready page:load', function() {
 	 function generateInstructorCalendar(){ 
 		Icalendar.fullCalendar({
 		header: {
-			left: 'title',
-			center: 'prev next',
-			right: 'today agendaWeek' 
+			left: 'prev next',
+			center: 'title',
+			right: 'today' 
 		},
 		
 		defaultView: "agendaWeek",
 		contentHeight: "auto",
-
+		timezone: 'instructorTimeZone',
 		lang: currentLangCode,
-		weekNumbers: true,
+		weekNumbers: false,
 		displayEventEnd: true,
 		eventLimit: true,
+		// editable: true,
+
+		allDaySlot: false,
 		eventOverlap: false,
 		overlap: false,
 		eventSources: [
 			{
 				url: '/instructors/' + instructorId + '/availabilities',
 				rendering: 'background',
-				className: 'availability-color'
+				className: 'availability-color',
+				// editable: true, 
 			},
 			
 			{
@@ -53,18 +57,20 @@ generateInstructorCalendar();
 	function generateUserCalendar(){ 
 		Ucalendar.fullCalendar({
 		header: {
-			left: 'title',
-			center: 'prev next',
-			right: 'today agendaWeek' 
+			left: 'prev next',
+			center: 'title',
+			right: 'today' 
 		},
 		
 		defaultView: "agendaWeek",
 		contentHeight: "auto",
 
 		lang: currentLangCode,
-		weekNumbers: true,
+		weekNumbers: false,
 		displayEventEnd: true,
+		timezone: 'userTimeZone',
 		eventLimit: true,
+		allDaySlot: false,
 		eventOverlap: false,
 		overlap: false,
 		eventSources: [
@@ -114,7 +120,7 @@ generateUserCalendar();
 				.text(langText)
 		);
 	});
-// $('#lang-selector > option[value="zh-cn"]').text('简体中文');
+
 
 	// rerender the Ucalendar when the selected option changes
 	$('#lang-selector').on('change', function() {

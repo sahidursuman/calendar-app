@@ -4,6 +4,10 @@ To sign up as a new user in development mode, run 'mailcatcher' on the command l
 
 emails can be accessed by inputting http://127.0.0.1:1080 in the address bar of your browser
 
+
+Current errors: 
+
+When you try to make an availability after first loading page, the 'save' button is unresponsive. Only after refreshing does the availability save.
 <!-- 
 This README would normally document whatever steps are necessary to get the
 application up and running.

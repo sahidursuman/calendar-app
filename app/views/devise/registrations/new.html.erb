@@ -17,6 +17,15 @@
       </div>
     </div>
 
+    	<div class="form-group">
+      <%= f.label :time_zone %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.time_zone_select :time_zone, nil, {:class => 'form-control'} %>
+        </div>
+      </div>
+    </div>
+
     <div class="form-group">
       <div class="row">
         <div class="col-sm-6">

@@ -18,7 +18,7 @@ class InstructorsController < ApplicationController
     @instructor = Instructor.new(instructor_params)
     @instructor.teacher = current_user
     if @instructor.save
-      redirect_to instructors_url
+      redirect_to instructor_path(@instructor)
     else
       render :new
     end
@@ -43,7 +43,7 @@ class InstructorsController < ApplicationController
 private
 
   def instructor_params
-    params.require(:instructor).permit(:description, :first_language, :subject_to_teach, :education, :price_cents, :skype, :avatar, :avatar_cache, :remove_avatar, 
+    params.require(:instructor).permit(:description, :country_of_origin, :first_language, :subject_to_teach, :education, :price_cents, :skype, :avatar, :avatar_cache, :remove_avatar, 
     	:resume, :resume_cache, :remove_resume, :credential, :credential_cache, :remove_credential, :credential_extra, :credential_extra_cache, :remove_credential_extra)
   end
 

@@ -9,7 +9,7 @@ class CreateInstructors < ActiveRecord::Migration
       t.string :education
       t.integer :price_cents
       t.string :skype
-
+      t.string :q_q
       t.timestamps null: false
     end
   end

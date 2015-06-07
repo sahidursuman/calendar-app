@@ -18,8 +18,12 @@
   <div class="field form-group">
     <%= f.label :end_time %><br>
     <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
+    <%# f.hidden_field :end_time, value: 'English' %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
