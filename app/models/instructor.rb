@@ -7,6 +7,7 @@ class Instructor < ActiveRecord::Base
 	mount_uploader :resume, ResumeUploader
 	mount_uploader :credential, CredentialUploader
 	mount_uploader :credential_extra, CredentialExtraUploader
+	validates :country_of_origin, presence: true
 
   def availability_open?(requested_availability)
     new_availability = requested_availability.timerange    
@@ -19,7 +20,7 @@ class Instructor < ActiveRecord::Base
   end
 
 	def country_name
-		if country_of_origin.length <= 4
+		if country_of_origin.length <= 3
 			ISO3166::Country[country_of_origin]
 		else
 			country_of_origin

@@ -25,7 +25,7 @@ $(document).on('ready page:load', function() {
 		weekNumbers: false,
 		displayEventEnd: true,
 		eventLimit: true,
-		editable: true,
+		// editable: true,
 
 		allDaySlot: false,
 		eventOverlap: false,
@@ -35,7 +35,7 @@ $(document).on('ready page:load', function() {
 				url: '/instructors/' + instructorId + '/availabilities',
 				rendering: 'background',
 				className: 'availability-color',
-				editable: true,
+				// editable: true, 
 			},
 			
 			{
@@ -44,9 +44,9 @@ $(document).on('ready page:load', function() {
 				className: 'booking-color'
 			}
 		],
-		// dayClick: function(date, jsEvent, view) {
-  //     $('#availabilityModal').modal('show');
-  //   },
+		dayClick: function(date, jsEvent, view) {
+      $('#availabilityModal').modal('show');
+    },
 	});
 };
 
