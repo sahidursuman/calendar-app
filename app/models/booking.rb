@@ -17,6 +17,8 @@ validate :consistent
 
     if start_time >= end_time
       errors.add(:start_time, "cannot be greater than the end time")
+    elsif start_time < Time.now
+      errors.add(:start_time, "cannot be earlier than the current time")
     end
   end
 end
