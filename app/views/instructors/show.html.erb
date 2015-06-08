@@ -121,9 +121,8 @@
      <div id="modalBody" class="modal-body">
 
       <%= bootstrap_form_for([@instructor, Booking.new], remote: true) do |f| %>
-      
         <div class="field">
-          <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
+          <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
         </div>
      </div>
 
