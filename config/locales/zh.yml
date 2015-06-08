@@ -19,16 +19,16 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+zh:
   pages:
     home:
-      title: "Home Page"
-      subheading: "We'll put more cool shit here"
+      title: "这里"
+      subheading: "过一会要放这里厉害东西"
   instructors:
   activerecord:
     attributes:
       user:
-        time_zone: "Time Zone"
+        time_zone: "时区"
   date:
     order:
       - :year
