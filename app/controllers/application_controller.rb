@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :reject_locked!, if: :devise_controller?
+  before_filter :set_locale
   before_action :set_user_timezone
 
   # Devise permitted params
@@ -60,6 +61,20 @@ class ApplicationController < ActionController::Base
 	
   helper_method :require_admin!
 
-  
+  private
 
+# set_locale: 
+		# could also pass local from a current user attribute that the user sets 
+  	# ie => current_user.locale
+  	# from a subdomain
+  	# ie => request.subdomain
+  	# or => request.env["HTTP_ACCEPT_LANGUAGE"] => From user's browser
+  	# or => request.remote_ip => passed in through some kind of geolocater
+  def set_locale
+  	I18n.locale = params[:locale] if params[:locale].present?  
+  end
+
+  def default_url_options(options = {})
+  	{locale: I18n.locale}
+  end
 end

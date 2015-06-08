@@ -22,7 +22,7 @@
 		  </div>
 		  <!-- List group -->
 		  <ul class="list-group">
-		    <li class="list-group-item"><b>Time Zone: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
+		    <li class="list-group-item"><b><%= 	User.human_attribute_name(:time_zone) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
 		    <li class="list-group-item"><b>Country of Origin: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
 		    <!-- <li class="list-group-item"><b>First Language: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%# @instructor.first_language %></li> -->
 		    <li class="list-group-item"><b>Teaching: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
