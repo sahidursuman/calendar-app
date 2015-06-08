@@ -10,7 +10,7 @@ CalendarApp::Application.routes.draw do
 	  resources :users, only: [:index, :show]
 
 	  resources :instructors do
-	    resources :bookings, except: [:new]
+	    resources :bookings
 	    resources :availabilities
 	  end
 	  namespace :admin do
