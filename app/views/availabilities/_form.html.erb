@@ -1,8 +1,7 @@
-<%= form_for([@instructor, @availability]) do |f| %>
+<%= bootstrap_form_for([@instructor, @availability]) do |f| %>
   <% if @availability.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@availability.errors.count, "error") %> prohibited this availability from being saved:</h2>
-
       <ul>
       <% @availability.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,19 +10,13 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
-    <%# f.hidden_field :end_time, value: 'English' %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
+
+  <%= f.datetime_select :end_time, discard_year: true, minute_step: 30, ampm: true %>
+  
+	<%= f.form_group do  %>
+	  <%= f.primary "Create Availability" %> 
+  <% end %>
 <% end %>
 
 

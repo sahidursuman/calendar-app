@@ -5,7 +5,7 @@
 		<div class="page-header">
 			<div class="row">
 				<div class="col-sm-3 ">
-				
+			
 					<%= image_tag @instructor.avatar_url(:thumb), class: 'img-rounded' %>
 				</div>
 				<h2 class="col-sm-8">
@@ -120,18 +120,10 @@
 
      <div id="modalBody" class="modal-body">
 
-      <%= form_for([@instructor, Booking.new], remote: true) do |f| %>
-      
+      <%= bootstrap_form_for([@instructor, Booking.new], remote: true) do |f| %>
         <div class="field">
-          <%= f.label :start_time %>
-          <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
+          <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
         </div>
-
-        <div class="field">
-          <%= f.label :end_time %>
-          <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
-        </div>
-
      </div>
 
       <div class="modal-footer form-group">
