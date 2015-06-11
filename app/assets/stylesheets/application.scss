@@ -4,7 +4,9 @@
  *= require_self
  */
 
+@import "bootstrap-sprockets";
 @import "bootstrap-overrides";
+@import "bootstrap-datetimepicker";
 @import "fullcalendar";
 @import "jquery-ui/cupertino";
 

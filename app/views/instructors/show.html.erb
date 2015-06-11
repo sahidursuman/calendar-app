@@ -120,9 +120,17 @@
 
      <div id="modalBody" class="modal-body">
 
-      <%= bootstrap_form_for([@instructor, Booking.new], remote: true) do |f| %>
-        <div class="field">
-          <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
+      <div class="container">
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
         </div>
      </div>
 

@@ -75,6 +75,8 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
+    bootstrap3-datetimepicker-rails (4.7.14)
+      momentjs-rails (>= 2.8.1)
     bootstrap_form (2.3.0)
     builder (3.2.2)
     byebug (4.0.5)
@@ -236,6 +238,7 @@ DEPENDENCIES
   bcrypt (= 3.1.10)
   better_errors
   bootstrap-sass (= 3.3.4.1)
+  bootstrap3-datetimepicker-rails (~> 4.7.14)
   bootstrap_form
   byebug (= 4.0.5)
   carrierwave!
@@ -266,6 +269,3 @@ DEPENDENCIES
   tzinfo-data
   uglifier (= 2.7.1)
   web-console (= 2.1.2)
-
-BUNDLED WITH
-   1.10.3
