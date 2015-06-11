@@ -1,3 +1,5 @@
 $(function () {
-  $('#datetimepicker1').datetimepicker();
+  $('#datetimepicker').datetimepicker({
+    sideBySide: true, 
+  });
 });

@@ -5,7 +5,7 @@
 		<div class="page-header">
 			<div class="row">
 				<div class="col-sm-3 ">
-			
+
 					<%= image_tag @instructor.avatar_url(:thumb), class: 'img-rounded' %>
 				</div>
 				<h2 class="col-sm-8">
@@ -15,35 +15,35 @@
 		</div>
 		
 		<div class="panel panel-default">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading"><%= @first_name %>'s info</div>
-		  <div class="panel-body">
-		    <p>Take a look at <%= @first_name %>'s info and see if they're the teacher for you </p>
-		  </div>
-		  <!-- List group -->
-		  <ul class="list-group">
-		    <li class="list-group-item"><b><%= 	User.human_attribute_name(:time_zone) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
-		    <li class="list-group-item"><b>Country of Origin: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
-		    <!-- <li class="list-group-item"><b>First Language: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%# @instructor.first_language %></li> -->
-		    <li class="list-group-item"><b>Teaching: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
-		    <li class="list-group-item"><b>Edumacation: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
-		     <li class="list-group-item"><b>Hourly Rate:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
-		  </ul>
-		</div>
+      <!-- Default panel contents -->
+      <div class="panel-heading"><%= @first_name %>'s info</div>
+      <div class="panel-body">
+        <p>Take a look at <%= @first_name %>'s info and see if they're the teacher for you </p>
+      </div>
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item"><b><%= 	User.human_attribute_name(:time_zone) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
+        <li class="list-group-item"><b>Country of Origin: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
+        <!-- <li class="list-group-item"><b>First Language: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%# @instructor.first_language %></li> -->
+        <li class="list-group-item"><b>Teaching: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
+        <li class="list-group-item"><b>Edumacation: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
+        <li class="list-group-item"><b>Hourly Rate:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
+      </ul>
+    </div>
 
-		<!-- resume info -->
-		<% if @instructor.resume? %>
-			<%= link_to @instructor.resume_url, class: 'btn btn-primary btn-xs', target: "_blank" do %>
-				<span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download <%= @first_name %>'s Resume 
-			<% end %>
-		<% else %>	
-			<i><%= "#{@instructor.teacher.first_name.capitalize} hasn't uploaded a resume yet." %></i>
-		<% end %>
-		<br><br>
-		<%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
+    <!-- resume info -->
+    <% if @instructor.resume? %>
+    <%= link_to @instructor.resume_url, class: 'btn btn-primary btn-xs', target: "_blank" do %>
+    <span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download <%= @first_name %>'s Resume 
+    <% end %>
+    <% else %>	
+    <i><%= "#{@instructor.teacher.first_name.capitalize} hasn't uploaded a resume yet." %></i>
+    <% end %>
+    <br><br>
+    <%= link_to 'Availabilities',instructor_availabilities_path(@instructor) %>
 
-		</div>
-	</div>
+  </div>
+</div>
 <br>
 
 <div class="row">
@@ -58,21 +58,21 @@
 <br>
 
 <!-- Calendar -->
-  <div class="row">
-  	<div class="col-sm-10 col-sm-offset-1">
-			<% if current_user == @instructor.teacher %>
-  <!-- This code renders the calendar the Instructor will see-->
-	  		<div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>" data-instructor-timezone="<%= @instructor.teacher.time_zone %>">
-		  <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
-	  		</div>
-			<% else %>
-			<!-- This code renders the calendar the User will see-->
-				<div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>" data-user-timezone="<%= current_user.time_zone if current_user.present? %>">
-			  <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
-	      </div>
-			<% end %>
-  	</div>
+<div class="row">
+ <div class="col-sm-10 col-sm-offset-1">
+   <% if current_user == @instructor.teacher %>
+   <!-- This code renders the calendar the Instructor will see-->
+   <div id="Icalendar" class="Icalendar" data-instructor-id="<%= @instructor.id %>" data-instructor-timezone="<%= @instructor.teacher.time_zone %>">
+    <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
   </div>
+  <% else %>
+  <!-- This code renders the calendar the User will see-->
+  <div id="Ucalendar" class="Ucalendar" data-instructor-id="<%= @instructor.id %>" data-user-timezone="<%= current_user.time_zone if current_user.present? %>">
+   <!-- pass the timezone params. pass the other event params via the 'data' attribute -->
+ </div>
+ <% end %>
+</div>
+</div>
 
 
 <!-- availability modal -->
@@ -81,32 +81,32 @@
    <div class="modal-content">
      <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-         <h4 id="modalTitle" class="modal-title">Create an Availability</h4>
+       <h4 id="modalTitle" class="modal-title">Create an Availability</h4>
      </div>
 
      <div id="modalBody" class="modal-body">
 
       <%= form_for([@instructor, Availability.new], remote: true) do |f| %>
       
-        <div class="field">
-          <%= f.label :start_time %>
-          <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
-        </div>
-
-        <div class="field">
-          <%= f.label :end_time %>
-          <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
-        </div>
-
-     </div>
-
-      <div class="modal-footer form-group">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="commit" id='submit_availability' class="btn btn-md btn-primary">Create this Availability!</button>
+      <div class="field">
+        <%= f.label :start_time %>
+        <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
       </div>
-    <% end %>
+
+      <div class="field">
+        <%= f.label :end_time %>
+        <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
+      </div>
+
     </div>
+
+    <div class="modal-footer form-group">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="submit" name="commit" id='submit_availability' class="btn btn-md btn-primary">Create this Availability!</button>
+    </div>
+    <% end %>
   </div>
+</div>
 </div>
 
 <!-- Booking modal -->
@@ -115,30 +115,24 @@
    <div class="modal-content">
      <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-         <h4 id="modalTitle" class="modal-title">Make a Booking</h4>
+       <h4 id="modalTitle" class="modal-title">Make a Booking</h4>
      </div>
 
      <div id="modalBody" class="modal-body">
 
-      <div class="container">
-        <div class="row">
-            <div class='col-sm-6'>
-                <div class="form-group">
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-     </div>
-
-      <div class="modal-footer form-group">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="commit" id='submit_booking' class="btn btn-md btn-primary">Create this Booking!</button>
+      <%= form_for([@instructor, Booking.new], remote: true) do |f| %>
+      <div class="input-group date" id="datetimepicker">
+        <%= f.text_field :start_time, class: 'form-control'  %>
+        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
       </div>
-    <% end %>
+
     </div>
+
+    <div class="modal-footer form-group">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="submit" name="commit" id='submit_booking' class="btn btn-md btn-primary">Create this Booking!</button>
+    </div>
+    <% end %>
   </div>
+</div>
 </div>
