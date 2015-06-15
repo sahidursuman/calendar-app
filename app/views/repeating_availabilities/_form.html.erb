@@ -1,0 +1,30 @@
+<%= bootstrap_form_for([@instructor, @repeating_availability]) do |f| %>
+  <% if @repeating_availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repeating_availability.errors.count, "error") %> prohibited this repeating_availability from being saved:</h2>
+      <ul>
+      <% @repeating_availability.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
+
+  <%= f.datetime_select :end_time, discard_year: true, minute_step: 30, ampm: true %>
+  
+  <%= f.check_box_tag(:Monday) %>
+  <%= f.label_tag(:Monday, "Monday") %>
+
+  <%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+
+  <%= f.form_group do  %>
+    <%= f.primary "Create repeating_availability" %> 
+  <% end %>
+<% end %>
+
+
