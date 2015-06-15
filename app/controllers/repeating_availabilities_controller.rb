@@ -1,0 +1,2 @@
+class RepeatingAvailabilitiesController < ApplicationController
+end
