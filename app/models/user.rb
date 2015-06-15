@@ -6,7 +6,6 @@ has_many :bookings, foreign_key: :student_id
 
 # Relations
 has_many :posts
-has_many :availabilities
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -16,6 +16,7 @@
 //= require bootstrap 
 //= require common
 //= require moment
+//= require bootstrap-datetimepicker
 //= require fullcalendar
 //= require fullcalendar/lang/zh-cn
 //= require fullcalendar/lang/zh-tw

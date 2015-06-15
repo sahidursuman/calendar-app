@@ -1,0 +1,44 @@
+<%= form_for([@instructor, @repeating_availability]) do |f| %>
+  <% if @repeating_availability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repeating_availability.errors.count, "error") %> prohibited this repeating_availability from being saved:</h2>
+      <ul>
+      <% @repeating_availability.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :start_time%>
+  <%= f.datetime_select :start_time, discard_year: true, minute_step: 30, ampm: true %>
+
+  <%= f.datetime_select :end_time, discard_year: true, minute_step: 30, ampm: true %>
+  
+  <%= f.form_group :days_of_the_week %>
+  <%= %>
+
+
+  <%= f.submit  %>
+    <%= f.primary "Create repeating_availability" %> 
+  <% end %>
+<% end %>
+
+
+    <div class="form-group">
+      <%= f.label :start_time %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.text_field :start_time, discard_year: true, minute_step: 30, ampm: true, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :end_time %>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= f.password_field :end_time, discard_year: true, minute_step: 30, ampm: true, class: "form-control" %>
+        </div>
+      </div>
+    </div>

@@ -11,6 +11,7 @@ gem 'turbolinks', '2.5.3'
 gem 'jbuilder', '2.2.13'
 gem 'bcrypt', '3.1.10'
 
+
 # Necessary for Windows OS (won't install on *nix systems)
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
@@ -27,6 +28,7 @@ gem 'font-awesome-sass', '4.3.2.1'
 gem 'bootstrap-sass', '3.3.4.1'
 
 gem 'faker'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 gem 'jquery-ui-themes', git: "https://github.com/fatdude/jquery-ui-themes-rails"
