@@ -5,3 +5,7 @@ $(function () {
 $(function () {
   $('#repeating_datetimepicker_start').datetimepicker();
 });
+
+$(function () {
+  $('#datetimepicker_booking').datetimepicker();
+});
