@@ -83,13 +83,9 @@ generateInstructorCalendar();
 				url: '/instructors/' + instructorId2 + '/bookings',
 				backgroundColor: '#9DD6F2',
 				className: 'booking-color'
-			}
-		],
-		events: [
+			},
 			{
-				start: '10:00:00',
-				end:  '16:00:00',
-				dow: [1,2,4,6]
+				url: '/instructors/' + instructorId2 + '/repeatings'
 			}
 		],
 		dayClick: function(date, jsEvent, view) {
