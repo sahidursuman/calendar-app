@@ -35,12 +35,13 @@ class RepeatingsController < ApplicationController
   end
 
   def index
+    @repeatings = @instructor.repeatings
   end
 
 
 private
   def set_repeating
-    @repeating = repeating.find(params[:id])
+    @repeating = @instructor.repeatings.find(params[:id])
   end
 
   def repeating_params

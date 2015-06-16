@@ -76,29 +76,14 @@
 
 <%= bootstrap_form_for([@instructor, Repeating.new]) do |f| %>
 
-  <label>
-  <div class='col-sm-6 field'>
-    <div class="form-group">
-        <div class='input-group date' id='repeating_datetimepicker_start'>
-            <input type='text' name="repeating[start_time]" class="form-control" />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-time"></span>
-            </span>
-        </div>
-    </div>
-  </div>Start Time</label>
+  <div class="field">
+    <%= f.time_field :start_time %>
+  </div>
 
-  <label>
-  <div class='col-sm-6 field'>
-    <div class="form-group">
-        <div class='input-group date' id='repeating_datetimepicker'>
-            <input type='text' name="repeating[end_time]" class="form-control" />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-time"></span>
-            </span>
-        </div>
-    </div>
-  </div>End Time</label>
+    <div class="field">
+    <%= f.time_field :end_time %>
+  </div>
+
 
   <div class="field">
   <label class="checkbox">
