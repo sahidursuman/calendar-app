@@ -8,6 +8,18 @@ class RepeatingsController < ApplicationController
   end
 
   def create
+    @repeating = @instructor.repeatings.build(repeating_params)
+    respond_to do |format|
+      if @repeating.save
+        format.html { redirect_to :back, notice: 'repeating was successfully created.' }
+        format.json { render :show, status: :created, location: ([@instructor, @repeating]) }
+        format.js {render inline: "location.reload();" }
+      else
+        format.html { render :new }
+        format.json { render json: @repeating.errors, status: :unprocessable_entity }
+        format.js {}
+      end
+    end
   end
 
   def edit

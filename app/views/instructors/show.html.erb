@@ -74,6 +74,20 @@
   	</div>
   </div>
 
+<%= form_for([@instructor, Repeating.new], remote: true) do |f| %>
+
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
+  </div>
+
+  <% end %>
+
 
 <!-- availability modal -->
 <div id="availabilityModal" class="modal fade">

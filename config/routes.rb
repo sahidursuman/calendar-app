@@ -12,6 +12,7 @@ CalendarApp::Application.routes.draw do
 	  resources :instructors do
 	    resources :bookings
 	    resources :availabilities
+	    resources :repeatings
 	  end
 	  namespace :admin do
 	    root "base#index"
