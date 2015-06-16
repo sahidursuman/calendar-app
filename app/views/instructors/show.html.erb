@@ -86,11 +86,28 @@
     <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
   </div>
 
-  <div>
-    <%= f.label :days_of_the_week %>
-    <%= check_box_tag name = 'repeating[days_of_the_week][]', value = 1,   %>
-    <%= check_box_tag name = 'repeating[days_of_the_week][]', 'Tuesday' %>
-    <%= check_box_tag name = 'repeating[days_of_the_week][]', 'Wednesday' %>
+  <div class="field">
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_sunday" name="repeating[days_of_the_week][]" type="checkbox" value="0" />Sunday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_monday" name="repeating[days_of_the_week][]" type="checkbox" value="Monday" />Monday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_tuesday" name="repeating[days_of_the_week][]" type="checkbox" value="Tuesday" />Tuesday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_wednesday" name="repeating[days_of_the_week][]" type="checkbox" value="Wednesday" />Wednesday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_thurdsay" name="repeating[days_of_the_week][]" type="checkbox" value="Thursday" />Thursday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_friday" name="repeating[days_of_the_week][]" type="checkbox" value="Friday" />Friday</label>
+
+  <label class="checkbox">
+  <input class="check_boxes optional" id="dow_saturday" name="repeating[days_of_the_week][]" type="checkbox" value="Saturday" />Saturday</label>  
+
   </div>
 
   <%= f.submit %>
