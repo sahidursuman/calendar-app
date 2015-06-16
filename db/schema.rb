@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604204705) do
+ActiveRecord::Schema.define(version: 20150615235751) do
 
   create_table "availabilities", force: :cascade do |t|
     t.datetime "start_time"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150604204705) do
     t.string   "education"
     t.integer  "price_cents"
     t.string   "skype"
+    t.string   "q_q"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.string   "avatar"
@@ -75,6 +76,15 @@ ActiveRecord::Schema.define(version: 20150604204705) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "repeatings", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "user_id"
+    t.text     "days_of_the_week"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
