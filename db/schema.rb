@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150615235751) do
   create_table "repeatings", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer  "user_id"
+    t.integer  "instructor_id"
     t.text     "days_of_the_week"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
