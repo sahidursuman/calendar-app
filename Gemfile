@@ -35,7 +35,7 @@ gem 'bootstrap_form'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
-
+gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 # gem 'activemerchant'
 
 group :development, :test do
