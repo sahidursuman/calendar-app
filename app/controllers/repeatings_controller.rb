@@ -44,7 +44,7 @@ private
   end
 
   def repeating_params
-    params.require(:repeating).permit(:start_time, :end_time)
+    params.require(:repeating).permit(:start_time, :end_time, :days_of_the_week => [])
   end
 
   def load_instructor

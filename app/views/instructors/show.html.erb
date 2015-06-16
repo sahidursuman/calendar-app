@@ -86,6 +86,15 @@
     <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
   </div>
 
+  <div>
+    <%= f.label :days_of_the_week %>
+    <%= check_box_tag name = 'repeating[days_of_the_week][]', value = 1,   %>
+    <%= check_box_tag name = 'repeating[days_of_the_week][]', 'Tuesday' %>
+    <%= check_box_tag name = 'repeating[days_of_the_week][]', 'Wednesday' %>
+  </div>
+
+  <%= f.submit %>
+
   <% end %>
 
 
