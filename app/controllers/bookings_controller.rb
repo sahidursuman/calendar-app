@@ -42,6 +42,7 @@ class BookingsController < ApplicationController
   private
 
 	def put_end_time(start_time)
+    # binding.pry
 		 (start_time.to_time + 1.hours).to_datetime
 	end
 
