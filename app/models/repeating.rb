@@ -9,5 +9,4 @@ private
   def arrayify
     self.days_of_the_week.map! {|value| value.to_i}
   end
-
 end
