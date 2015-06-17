@@ -32,6 +32,19 @@ class Instructor < ActiveRecord::Base
   def bookable?(requested_booking)
     new_booking = requested_booking.timerange
 
+    
+    if self.repeatings.any? 
+      self.repeatings.each do |repeating|
+        available_repeating_booking = repeating.day_checker.any? do |array|
+          starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
+          ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
+          repeating_range = TimeRange.new(starting, ending)
+          repeating_range.in_range?(new_booking)
+        end
+      end
+      available_repeating_booking
+    end 
+
     no_double_booking = self.bookings.reload.none? do |booking|
       booking.timerange.overlap?(new_booking)
     end
@@ -40,32 +53,7 @@ class Instructor < ActiveRecord::Base
       availability.timerange.in_range?(new_booking)
     end
 
-    no_double_booking && available_booking
+    no_double_booking && (available_booking || available_repeating_booking)
   end
-
-  def book_repeating?(requested_booking)
-    new_booking = requested_booking.timerange
-    if self.repeatings.any? 
-      self.repeatings.each do |repeating|
-        repeating.day_checker.any? do |array|
-          starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
-          ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
-          repeating_range = TimeRange.new(starting, ending)
-
-        end
-      end
-    end 
-
-
-  end
-
-
-
-
-
-
-
-
-
 
 end
