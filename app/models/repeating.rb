@@ -9,26 +9,14 @@ def day_checker
   dow = []
   if self.days_of_the_week.present?
     self.days_of_the_week.each do |day|
-      case day
-        when 0
-        weekday = "Sunday"
-        when 1
-        weekday = "Monday"
-        when 2
-        weekday = "Tuesday"
-        when 3
-        weekday = "Wednesday"
-        when 4
-        weekday = "Thursday"
-        when 5
-        weekday = "Friday"
-        when 6
-        weekday = "Saturday"
+      if day == 0
+        dow << 7
+      else
+        dow << day
       end
-      dow << weekday
     end
   end
-  return dow
+  return dow 
 end
 
 
