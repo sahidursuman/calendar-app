@@ -37,11 +37,13 @@ $(document).on('ready page:load', function() {
 				className: 'availability-color',
 				// editable: true, 
 			},
-			
 			{
 				url: '/instructors/' + instructorId + '/bookings',
 				backgroundColor: '#9DD6F2',
 				className: 'booking-color'
+			},
+			{
+				url: '/instructors/' + instructorId + '/repeatings'
 			}
 		],
 		dayClick: function(date, jsEvent, view) {

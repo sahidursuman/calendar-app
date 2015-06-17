@@ -13,15 +13,15 @@ u.skip_confirmation!
 u.save!
 
 # Test user 
-u = User.new(
+m = User.new(
     first_name: "test",
     last_name: "user",
-    email: "testuser@123.com"
+    email: "testuser@123.com",
     password: "123123",
     time_zone: Faker::Address.time_zone
 )
-u.skip_confirmation!
-u.save!
+m.skip_confirmation!
+m.save!
 
 # Test user accounts
 100.times do |i|
