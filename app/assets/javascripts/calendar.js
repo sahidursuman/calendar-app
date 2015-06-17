@@ -43,7 +43,9 @@ $(document).on('ready page:load', function() {
 				className: 'booking-color'
 			},
 			{
-				url: '/instructors/' + instructorId + '/repeatings'
+				url: '/instructors/' + instructorId + '/repeatings',
+				rendering: 'background',
+				className: 'availability-color'
 			}
 		],
 		dayClick: function(date, jsEvent, view) {
@@ -87,7 +89,9 @@ generateInstructorCalendar();
 				className: 'booking-color'
 			},
 			{
-				url: '/instructors/' + instructorId2 + '/repeatings'
+				url: '/instructors/' + instructorId2 + '/repeatings' ,
+				rendering: 'background',
+				className: 'availability-color'
 			}
 		],
 		dayClick: function(date, jsEvent, view) {

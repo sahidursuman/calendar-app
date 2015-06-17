@@ -10,6 +10,10 @@ class Instructor < ActiveRecord::Base
 	mount_uploader :credential_extra, CredentialExtraUploader
 	validates :country_of_origin, presence: true
 
+  def timerange
+    TimeRange.new(start_time, end_time)
+  end
+
   def availability_open?(requested_availability)
     new_availability = requested_availability.timerange    
 
@@ -32,14 +36,13 @@ class Instructor < ActiveRecord::Base
   def bookable?(requested_booking)
     new_booking = requested_booking.timerange
     
-    available_repeating_booking = if self.repeatings.any? 
-      self.repeatings.each do |repeating|
-        repeating.day_checker.any? do |array|
-          starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
-          ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
-          repeating_range = TimeRange.new(starting, ending)
-          repeating_range.in_range?(new_booking)
-        end
+    available_repeating_booking = self.repeatings.any? do |repeating|
+      repeating.day_checker.any? do |array|
+        starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
+        ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
+        repeating_range = TimeRange.new(starting, ending)
+        repeating_range.in_range?(new_booking)
+        binding.pry
       end
     end 
 
@@ -50,7 +53,6 @@ class Instructor < ActiveRecord::Base
     available_booking = self.availabilities.any? do |availability|
       availability.timerange.in_range?(new_booking)
     end
-
     no_double_booking && (available_booking || available_repeating_booking)
   end
 
