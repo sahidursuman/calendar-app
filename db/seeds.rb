@@ -12,6 +12,17 @@ u = User.new(
 u.skip_confirmation!
 u.save!
 
+# Test user 
+u = User.new(
+    first_name: "test",
+    last_name: "user",
+    email: "testuser@123.com"
+    password: "123123",
+    time_zone: Faker::Address.time_zone
+)
+u.skip_confirmation!
+u.save!
+
 # Test user accounts
 100.times do |i|
 	first_name = Faker::Name.first_name
