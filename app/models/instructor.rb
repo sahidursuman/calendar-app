@@ -38,8 +38,34 @@ class Instructor < ActiveRecord::Base
     
     available_booking = self.availabilities.any? do |availability|
       availability.timerange.in_range?(new_booking)
-    end 
+    end
+
     no_double_booking && available_booking
   end
+
+  def book_repeating?(requested_booking)
+    new_booking = requested_booking.timerange
+    if self.repeatings.any? 
+      self.repeatings.each do |repeating|
+        repeating.day_checker.any? do |array|
+          starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
+          ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
+          repeating_range = TimeRange.new(starting, ending)
+
+        end
+      end
+    end 
+
+
+  end
+
+
+
+
+
+
+
+
+
 
 end
