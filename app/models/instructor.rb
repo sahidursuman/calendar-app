@@ -31,7 +31,6 @@ class Instructor < ActiveRecord::Base
 
   def bookable?(requested_booking)
     new_booking = requested_booking.timerange
-
     
     if self.repeatings.any? 
       self.repeatings.each do |repeating|
