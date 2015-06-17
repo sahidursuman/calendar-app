@@ -74,45 +74,7 @@
   	</div>
   </div>
 
-<%= bootstrap_form_for([@instructor, Repeating.new]) do |f| %>
 
-  <div class="field">
-    <%= f.time_field :start_time %>
-  </div>
-
-    <div class="field">
-    <%= f.time_field :end_time %>
-  </div>
-
-
-  <div class="field">
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_sunday" name="repeating[days_of_the_week][]" type="checkbox" value=0 />Sunday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_monday" name="repeating[days_of_the_week][]" type="checkbox" value=1 />Monday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_tuesday" name="repeating[days_of_the_week][]" type="checkbox" value=2 />Tuesday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_wednesday" name="repeating[days_of_the_week][]" type="checkbox" value=3 />Wednesday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_thurdsay" name="repeating[days_of_the_week][]" type="checkbox" value=4 />Thursday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_friday" name="repeating[days_of_the_week][]" type="checkbox" value=5 />Friday</label>
-
-  <label class="checkbox">
-  <input class="check_boxes optional" id="dow_saturday" name="repeating[days_of_the_week][]" type="checkbox" value=6 />Saturday</label>  
-
-  </div>
-
-  <%= f.form_group do %>
-    <%= f.primary "save it" %>
-    <% end %>
-  <% end %>
 
 
 <!-- availability modal -->
@@ -126,25 +88,63 @@
 
      <div id="modalBody" class="modal-body">
 
-      <%= form_for([@instructor, Availability.new], remote: true) do |f| %>
+      <%= bootstrap_form_for([@instructor, Availability.new], remote: true) do |f| %>
       
         <div class="field">
-          <%= f.label :start_time %>
           <%= f.datetime_select :start_time, discard_year: true, minute_step: 15, ampm: true %>
         </div>
 
         <div class="field">
-          <%= f.label :end_time %>
           <%= f.datetime_select :end_time, discard_year: true, minute_step: 15, ampm: true %>
         </div>
 
-     </div>
 
-      <div class="modal-footer form-group">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="commit" id='submit_availability' class="btn btn-md btn-primary">Create this Availability!</button>
+      
+        <%= f.form_group do %>
+        <%= f.primary "save it" %>
+        <% end %>
+      <% end %>
+
+   <%= bootstrap_form_for([@instructor, Repeating.new]) do |f| %>
+
+      <div class="field">
+        <%= f.time_field :start_time %>
       </div>
-    <% end %>
+
+        <div class="field">
+        <%= f.time_field :end_time %>
+      </div>
+
+
+      <div class="field">
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_sunday" name="repeating[days_of_the_week][]" type="checkbox" value=0 />Sunday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_monday" name="repeating[days_of_the_week][]" type="checkbox" value=1 />Monday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_tuesday" name="repeating[days_of_the_week][]" type="checkbox" value=2 />Tuesday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_wednesday" name="repeating[days_of_the_week][]" type="checkbox" value=3 />Wednesday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_thurdsay" name="repeating[days_of_the_week][]" type="checkbox" value=4 />Thursday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_friday" name="repeating[days_of_the_week][]" type="checkbox" value=5 />Friday</label>
+
+      <label class="checkbox">
+      <input class="check_boxes optional" id="dow_saturday" name="repeating[days_of_the_week][]" type="checkbox" value=6 />Saturday</label>  
+
+      </div>
+
+      <%= f.form_group do %>
+        <%= f.primary "save it" %>
+        <% end %>
+      <% end %>
+     </div>
     </div>
   </div>
 </div>
