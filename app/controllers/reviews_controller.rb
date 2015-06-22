@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     load_instructor
     if @review.save
-      redirect_to product_path(@instructor), notice: 'Review created successfully'
+      redirect_to instructor_path(@instructor), notice: 'Review created successfully'
     else
       render 'products/show'
     end
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     if @review.update_attributes(review_params)
-      redirect_to product_path(@instructor)
+      redirect_to instructor_path(@instructor)
     else
       render :edit
     end
