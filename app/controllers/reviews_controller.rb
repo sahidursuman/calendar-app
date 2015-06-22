@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = @instructor.reviews.build(review_params)
-    @review.user = current_user
+    @review.student = current_user
     load_instructor
     if @review.save
       redirect_to instructor_path(@instructor), notice: 'Review created successfully'
