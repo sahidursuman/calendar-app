@@ -37,7 +37,11 @@ class Instructor < ActiveRecord::Base
     new_booking = requested_booking.timerange
     
     available_repeating_booking = self.repeatings.any? do |repeating|
-      repeating.day_checker.any? do |array|
+      repeating.days_of_the_week.each do |day|
+        if day == requested_booking.wday
+          
+        end
+
         starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
         ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
         repeating_range = TimeRange.new(starting, ending)
@@ -55,5 +59,69 @@ class Instructor < ActiveRecord::Base
     end
     no_double_booking && (available_booking || available_repeating_booking)
   end
+
+# Gutting code here, combining method in repeating with repeating_availability code in Bookable method
+def day_checker
+  
+  dow = []
+  if self.days_of_the_week.present?
+    self.days_of_the_week.each do |day|
+      if day == 0
+        dow << 7
+      else
+        dow << day
+      end
+    end
+  end
+
+  start_dates = []
+  end_dates = []
+  
+  dow.each do |x|
+    start_dates << self.start_time.change(day: x)
+    end_dates << self.end_time.change(day: x)
+  end
+# This creates an array of arrays that each holds a start and end time
+[start_dates, end_dates].transpose
+end
+
+def gut_code
+array = []
+
+  self.repeatings.each do |repeating|
+    repeating.days_of_the_week.each do |day|
+    Datetime.new  
+    end
+  end
+end
+
+available_repeating_booking = self.repeatings.any? do |repeating|
+      repeating.day_checker.any? do |array|
+        starting = array.first.change(day: requested_booking.start_time.day, month: requested_booking.start_time.month)
+        ending = array.last.change(day: requested_booking.end_time.day, month: requested_booking.end_time.month)
+        repeating_range = TimeRange.new(starting, ending)
+        repeating_range.in_range?(new_booking)
+        binding.pry
+      end
+    end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 end
