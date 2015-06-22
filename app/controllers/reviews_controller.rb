@@ -2,6 +2,10 @@ class ReviewsController < ApplicationController
   before_filter :load_instructor
   before_filter :ensure_logged_in, only: [:create, :destroy]
 
+  def new
+    @review = @instructor.reviews.new
+  end
+
   def show
     @review = Review.find(params[:id])
   end
@@ -43,6 +47,6 @@ class ReviewsController < ApplicationController
   end
 
   def load_instructor
-    @instructor = instructor.find(params[:product_id])
+    @instructor = Instructor.find(params[:instructor_id])
   end
 end
