@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
 has_one :instructor, foreign_key: :teacher_id
+has_many :reviews
 has_many :bookings, foreign_key: :student_id  
 
 
