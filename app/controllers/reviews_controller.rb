@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to instructor_path(@instructor), notice: 'Review created successfully'
     else
-      render 'products/show'
+      render 'reviews/show'
     end
   end
 
