@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
   def create
     @review = @instructor.reviews.build(review_params)
     @review.student = current_user
-    load_instructor
     if @review.save
       redirect_to instructor_path(@instructor), notice: 'Review created successfully'
     else
@@ -23,7 +22,6 @@ class ReviewsController < ApplicationController
 
   def edit
   @review = Review.find(params[:id])
-  load_instructor
   end
 
   def update
