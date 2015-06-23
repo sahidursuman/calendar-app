@@ -1,4 +1,5 @@
 CalendarApp::Application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
 	scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do 
 	  root "pages#home"
 	  get "home", to: "pages#home", as: "home"
