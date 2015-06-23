@@ -74,14 +74,17 @@
   	</div>
   </div>
 
+<!-- reviews for each instructor -->
 <h3>
   Reviews for <%= "#{@instructor.teacher.first_name}, #{@instructor.teacher.last_name}" %>
 </h3>
   <p>
     <%  if @instructor.reviews.any? %>
-    <%= render 'reviews/review', locals: {review: @review } %>
+      <%= @instructor.reviews.each do |review|%>
+        <h5><strong><%= review.student.first_name%> <%= review.student.last_name %> says </strong></h5>
+        <p><%= review.comment %></p>
+      <% end %>
     <% end %>
-    <br/>
   </p>
 
 <% if current_user.nil? %>
