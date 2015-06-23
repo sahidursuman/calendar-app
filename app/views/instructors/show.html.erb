@@ -89,8 +89,10 @@
 
 <% if current_user.nil? %>
   <p> You must sign in to make a review </p>
-<% else %>
+<% elsif current_user.bookings.any? { |booking| (booking.instructor == @instructor) && booking.end_time > Time.now } %>
   <%= render 'reviews/form' %>
+<% else %>
+  <p>You can only review this instructor if you have completed a booking with them</p>
 <% end %>
 
 
