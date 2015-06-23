@@ -26,6 +26,7 @@ gem 'font-awesome-sass', '4.3.2.1'
 # Bootstrap 3: https://github.com/twbs/bootstrap-sass
 gem 'bootstrap-sass', '3.3.4.1'
 
+gem 'ratyrate', :github => 'wazery/ratyrate', :branch => 'development'
 gem 'faker'
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
