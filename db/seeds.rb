@@ -46,5 +46,18 @@ education_levels = ["Bachelor Degree", "Master Degree", "PhD", "Other"]
 	)
 
 	print "|"
-
 end
+
+350.times do 
+  Review.create!(
+    student_id: User.all.sample.id,
+    instructor_id: Instructor.all.sample.id,
+    comment: Faker::Lorem.paragraph,
+    rating: [1,2,3,4,5].sample
+    )
+  print '||'
+end
+
+
+
+

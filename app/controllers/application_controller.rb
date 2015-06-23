@@ -63,6 +63,13 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def ensure_logged_in
+    unless current_user
+      flash[:alert] = "Please log in"
+      redirect_to new_session_path
+    end
+  end
+
 # set_locale: 
 		# could also pass local from a current user attribute that the user sets 
   	# ie => current_user.locale

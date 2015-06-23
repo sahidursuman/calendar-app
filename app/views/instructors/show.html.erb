@@ -74,6 +74,25 @@
   	</div>
   </div>
 
+<!-- reviews for each instructor -->
+<h3>
+  Reviews for <%= "#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %>
+</h3>
+  <p>
+    <% @instructor.reviews.each do |review| %>
+      <% if review.student %>
+        <h4> <%= review.student.first_name%> says: </h4>   
+      <% end %>
+      <p> <%= review.comment %> </br> </p>
+    <% end %>
+  </p>
+
+<% if current_user.nil? %>
+  <p> You must sign in to make a review </p>
+<% else %>
+  <%= render 'reviews/form' %>
+<% end %>
+
 
 <!-- availability modal -->
 <div id="availabilityModal" class="modal fade">
