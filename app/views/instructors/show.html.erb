@@ -76,19 +76,19 @@
 
 <!-- reviews for each instructor -->
 <h3>
-  Reviews for <%= "#{@instructor.teacher.first_name}, #{@instructor.teacher.last_name}" %>
+  Reviews for <%= "#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %>
 </h3>
   <p>
-    <%  if @instructor.reviews.any? %>
-      <%= @instructor.reviews.each do |review|%>
-        <h5><strong><%= review.student.first_name%> <%= review.student.last_name %> says </strong></h5>
-        <p><%= review.comment %></p>
+    <% @instructor.reviews.each do |review| %>
+      <% if review.student %>
+        <h4> <%= review.student.first_name%> says: </h4>   
       <% end %>
+      <p> <%= review.comment %> </br> </p>
     <% end %>
   </p>
 
 <% if current_user.nil? %>
-  <h1> You must sign in to make a review </h1>
+  <p> You must sign in to make a review </p>
 <% else %>
   <%= render 'reviews/form' %>
 <% end %>

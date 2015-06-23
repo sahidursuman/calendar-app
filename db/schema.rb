@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20150622201735) do
 
   create_table "reviews", force: :cascade do |t|
     t.string   "student_id"
-    t.string   "integer"
     t.integer  "instructor_id"
     t.text     "comment"
     t.integer  "rating"
