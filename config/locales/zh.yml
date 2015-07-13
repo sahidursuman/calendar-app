@@ -24,6 +24,13 @@ zh:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
+  layouts:
+    nav:
+      home: "H"
+    nav_links:
+      sign_in: "SI"
+      sign_up: "SU"
+      instructors: "laoshi"
   instructors:
   activerecord:
     attributes:

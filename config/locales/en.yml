@@ -24,6 +24,13 @@ en:
     home:
       title: "Home Page"
       subheading: "We'll put more cool shit here"
+  layouts:
+    nav: 
+      home: "Home"
+    nav_links:
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+      instructors: "Instructors"
   instructors:
   activerecord:
     attributes:
