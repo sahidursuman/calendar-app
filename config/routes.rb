@@ -14,6 +14,7 @@ CalendarApp::Application.routes.draw do
 	    resources :availabilities
 	    resources :reviews
 	  end
+
 	  namespace :admin do
 	    root "base#index"
 	    resources :users
@@ -21,6 +22,7 @@ CalendarApp::Application.routes.draw do
 	    get "posts/dashboard", to: "posts#dashboard", as: "posts_dashboard"
 	    resources :posts
 	  end
+	  
 	end
 	# match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), via: [:get, :post]
 	# match '', to: redirect("/#{I18n.default_locale}/%{path}"), via: [:get, :post]

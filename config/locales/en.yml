@@ -24,11 +24,40 @@ en:
     home:
       title: "Home Page"
       subheading: "We'll put more cool shit here"
+  devise:
+    sessions:
+      new:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember Me"
+        sign_in: "Sign in"
+    shared:
+      links:
+        forgot: "Forgot your password?"
+        sign_up: "Sign up"
+        confirmation: "Didn't receive confirmation instructions?"
+  layouts:
+    nav: 
+      home: "Home"
+    nav_links:
+      sign_in: "Sign In"
+      sign_up: "Sign Up"
+      instructors: "Instructors"
+      profile: "Profile"
+      edit: "Edit your account"
+      greeting: "Signed in as:"
+      sign_out: "Sign Out"
+      become: "Become an Instructor"
   instructors:
   activerecord:
     attributes:
-      user:
+      instructor:
+        description: "'s info"
         time_zone: "Time Zone"
+        country_of_origin: "Country of Origin"
+        teaching: "Teaching"
+        education: "Education"
+        rate: "Hourly Rate" 
   date:
     order:
       - :year

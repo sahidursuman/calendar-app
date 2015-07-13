@@ -24,11 +24,40 @@ zh:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
+  devise:
+    sessions:
+      new:
+        email: "E"
+        password: "pw"
+        remember_me: "rm"
+        sign_in: "SN"
+    shared:
+      links:
+        forgot: "F P?"
+        sign_up: "S U"
+        confirmation: "No instructions?"
+  layouts:
+    nav:
+      home: "H"
+    nav_links:
+      sign_in: "SI"
+      sign_up: "SU"
+      instructors: "laoshi"
+      profile: "P"
+      edit: "editttt"
+      greeting: "SI:"
+      sign_out: "SO"
+      become: "EMBRACE YOUR DESTINY"
   instructors:
   activerecord:
     attributes:
-      user:
+      instructor:
+        description: "stuff"
         time_zone: "时区"
+        country_of_origin: "Guo Jia"
+        teaching: "Jiao"
+        education: "Edu"
+        rate: "Jia Chien" 
   date:
     order:
       - :year
