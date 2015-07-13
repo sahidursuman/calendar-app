@@ -12,8 +12,8 @@
 
 
 	<% if @instructor.resume? %>
-		<%= f.form_group :remove_resume, label: {text: "Resume"} do %>
-			<%= f.check_box :remove_resume, label: "You've already uploaded a Resume. Remove?" %>
+		<%= f.form_group :remove_resume, label: {text: t(".resume")} do %>
+			<%= f.check_box :remove_resume, label: t(".resume_message") %>
 		<% end %>
 	<% else %>
 			<%= f.file_field :resume %>
@@ -38,8 +38,8 @@
 		<%= f.hidden_field :credential_extra_cache %>
 	<% end %>
 
-	<%= f.form_group :country, label: {text: "Country"} do %>
-	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB", "AU"], prompt: 'Where are you from?'}, class: 'form-control' %>
+	<%= f.form_group :country, label: {text: t(".country")} do %>
+	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB", "AU"], prompt: t('.country_prompt')}, class: 'form-control' %>
   <% end %>
 
 	<%# f.text_field :first_language %>

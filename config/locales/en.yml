@@ -66,6 +66,10 @@ en:
       become: "Become an Instructor"
   instructors:
     form:
+      resume: "Resume"
+      resume_message:"You've already uploaded a Resume. Remove?"
+      country: "Country"
+      country_prompt: "Where are you from?"
       subject: "Subject to Teach"
       message: "Currently we only offer English to teach. More coming soon."
       default: "English"

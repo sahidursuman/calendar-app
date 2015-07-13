@@ -66,6 +66,10 @@ zh:
       become: "成为老师"
   instructors:
     form:
+      resume: "简历"
+      resume_message: "你已经上传了一个简历,去掉它?"
+      country: "国家"
+      country_prompt: "你来自哪里?"
       subject: '学科'
       message: "目前，我们只提供英语"
       default: "英语"
