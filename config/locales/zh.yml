@@ -22,48 +22,48 @@
 zh:
   users:
     show:
-      first_name: "FN:"
-      last_name: "LN:"
-      email: "El:"
-      time_zone: "TZ:"
-      admin: "A:"
-      bookings: "C B's"
-      start_date: "S D"
-      start_time: "S T"
-      end_date: "E D"
-      end_time: "E T"
-      instructor: "Instr"
+      first_name: "名字:"
+      last_name: "姓:"
+      email: "邮件:"
+      time_zone: "时区:"
+      admin: "管理员:"
+      bookings: "我的预订"
+      start_date: "开始日期"
+      start_time: "开始时间"
+      end_date: "结束日期"
+      end_time: "时间结束"
+      instructor: "老师 "
       account: "AC"
   pages:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
-      users_index: "U Index"
-      instructors_index: "I Index"
+      users_index: "用户索引"
+      instructors_index: "老师索引"
   devise:
     sessions:
       new:
-        email: "E"
-        password: "pw"
-        remember_me: "rm"
+        email: "邮件"
+        password: "密码"
+        remember_me: "记住我"
         sign_in: "SN"
     shared:
       links:
-        forgot: "F P?"
+        forgot: "你忘了密码"
         sign_up: "S U"
         confirmation: "No instructions?"
   layouts:
     nav:
-      home: "H"
+      home: "主页"
     nav_links:
       sign_in: "SI"
       sign_up: "SU"
-      instructors: "laoshi"
-      profile: "P"
-      edit: "editttt"
+      instructors: "老师"
+      profile: "轮廓"
+      edit: "改变"
       greeting: "SI:"
       sign_out: "SO"
-      become: "EMBRACE YOUR DESTINY"
+      become: "成为老师"
   instructors:
     form:
       subject: '学科'
@@ -77,12 +77,12 @@ zh:
   activerecord:
     attributes:
       instructor:
-        description: "stuff"
+        description: "信息"
         time_zone: "时区"
-        country_of_origin: "Guo Jia"
-        teaching: "Jiao"
-        education: "Edu"
-        rate: "Jia Chien" 
+        country_of_origin: "国家"
+        teaching: "教学"
+        education: "学位"
+        rate: "每小时收费" 
   date:
     order:
       - :year
