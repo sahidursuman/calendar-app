@@ -24,6 +24,18 @@ zh:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
+  devise:
+    sessions:
+      new:
+        email: "E"
+        password: "pw"
+        remember_me: "rm"
+        sign_in: "SN"
+    shared:
+      links:
+        forgot: "F P?"
+        sign_up: "S U"
+        confirmation: "No instructions?"
   layouts:
     nav:
       home: "H"
