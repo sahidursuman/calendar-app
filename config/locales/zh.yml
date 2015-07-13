@@ -27,8 +27,13 @@ zh:
   instructors:
   activerecord:
     attributes:
-      user:
+      instructor:
+        description: "stuff"
         time_zone: "时区"
+        country_of_origin: "Guo Jia"
+        teaching: "Jiao"
+        education: "Edu"
+        rate: "Jia Chien" 
   date:
     order:
       - :year

@@ -27,8 +27,13 @@ en:
   instructors:
   activerecord:
     attributes:
-      user:
+      instructor:
+        description: "'s info"
         time_zone: "Time Zone"
+        country_of_origin: "Country of Origin"
+        teaching: "Teaching"
+        education: "Education"
+        rate: "Hourly Rate" 
   date:
     order:
       - :year
