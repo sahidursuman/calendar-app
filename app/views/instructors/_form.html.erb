@@ -7,7 +7,7 @@
 		<% end %>
 	<% end %>
 
-	<%= f.file_field :avatar %>
+	<%= f.file_field :avatar, label: t('.avatar') %>
 	<%= f.hidden_field :avatar_cache %>
 
 
@@ -16,25 +16,25 @@
 			<%= f.check_box :remove_resume, label: t(".resume_message") %>
 		<% end %>
 	<% else %>
-			<%= f.file_field :resume %>
+			<%= f.file_field :resume, label: t(".resume") %>
 			<%= f.hidden_field :resume_cache %>	
 	<% end %>
 
 	<% if @instructor.credential? %>
-		<%= f.form_group :remove_credential, label: {text: "Credential"} do %>
-			<%= f.check_box :remove_credential, label: "You've already uploaded a credential. Remove?" %>
+		<%= f.form_group :remove_credential, label: {text: t(".credential")} do %>
+			<%= f.check_box :remove_credential, label: t(".credential_message") %>
 		<% end %>
 	<% else %>
-		<%= f.file_field :credential %>
+		<%= f.file_field :credential, label: t(".credential") %>
 		<%= f.hidden_field :credential_cache %>
 	<% end %>
 
 	<% if @instructor.credential_extra? %>
-		<%= f.form_group :remove_credential_extra, label: {text: "Second Credential"} do %>
-			<%= f.check_box :remove_credential_extra, label: "You've already uploaded a second credential. Remove?" %>
+		<%= f.form_group :remove_credential_extra, label: {text: t(".second_credential")} do %>
+			<%= f.check_box :remove_credential_extra, label: t(".second_credential_message") %>
 		<% end %>
 	<% else %>
-		<%= f.file_field :credential_extra, label: "Second Credential" %>
+		<%= f.file_field :credential_extra, label: t(".second_credential") %>
 		<%= f.hidden_field :credential_extra_cache %>
 	<% end %>
 
@@ -62,10 +62,10 @@
 	  <%= f.radio_button :education, 'Other', label: t('.other') %>
 	<% end %>
 
-	<%= f.number_field :price_cents %>
-	<%= f.text_field :skype %>
-	<%= f.text_area :description, rows: 8 , label: "things"%>
+	<%= f.number_field :price_cents, label: t('.price') %>
+	<%= f.text_field :skype, label: t('.skype') %>
+	<%= f.text_area :description, rows: 8 , label: t(".description") %>
 	<%= f.form_group do  %>
-	  <%= f.primary "Save it!" %> 
+	  <%= f.primary t(".save") %> 
   <% end %>
 <% end %>

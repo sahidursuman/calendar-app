@@ -66,8 +66,13 @@ en:
       become: "Become an Instructor"
   instructors:
     form:
+      avatar: "Avatar"
       resume: "Resume"
-      resume_message:"You've already uploaded a Resume. Remove?"
+      resume_message: "You've already uploaded a Resume. Remove?"
+      credential: "Credential"
+      credential_message: "You've already uploaded a credential. Remove?"
+      second_credential: "Second Credential"
+      second_credential_message: "You've already uploaded a second credential. Remove?"
       country: "Country"
       country_prompt: "Where are you from?"
       subject: "Subject to Teach"
@@ -75,9 +80,13 @@ en:
       default: "English"
       education: "Education:"
       college: "College"
-      bachelors: "Bachelors:"
+      bachelors: "Bachelors"
       masters: "Masters"
       other: "Other"
+      price: "Price in Cents"
+      skype: "Skype"
+      description: "Description"
+      save: "Save It!"
   activerecord:
     attributes:
       instructor:

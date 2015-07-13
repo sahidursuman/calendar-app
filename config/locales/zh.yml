@@ -51,7 +51,7 @@ zh:
       links:
         forgot: "你忘了密码"
         sign_up: "S U"
-        confirmation: "No instructions?"
+        confirmation: "您没有收到一个确认邮件?"
   layouts:
     nav:
       home: "主页"
@@ -66,8 +66,13 @@ zh:
       become: "成为老师"
   instructors:
     form:
+      avatar: "头像"
       resume: "简历"
       resume_message: "你已经上传了一个简历,去掉它?"
+      credential: "凭据"
+      credential_message: "你已经上传了一个凭据,去掉它?"
+      second_credential: "第二个凭据"
+      second_credential_message: "你已经上传了第二个凭据,去掉它?"
       country: "国家"
       country_prompt: "你来自哪里?"
       subject: '学科'
@@ -78,6 +83,10 @@ zh:
       bachelors: "本科学位"
       masters: "硕士学位"
       other: "其他"
+      price: "每小时收费"
+      skype: "Skype"
+      description: "信息"
+      save: "保存"
   activerecord:
     attributes:
       instructor:
