@@ -20,6 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
+  users:
+    show:
+      first_name: "FN:"
+      last_name: "LN:"
+      email: "El:"
+      time_zone: "TZ:"
+      admin: "A:"
+      bookings: "C B's"
+      start_date: "S D"
+      start_time: "S T"
+      end_date: "E D"
+      end_time: "E T"
+      instructor: "Instr"
+      account: "AC"
   pages:
     home:
       title: "这里"
