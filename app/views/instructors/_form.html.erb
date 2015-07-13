@@ -46,25 +46,25 @@
 	
 	<div class="form-group">
 		<label for="" class="control-label col-sm-2">
-			Subject to teach
+			<%= t('.subject') %>
 		</label>
 		<div class="col-sm-8">
 			<input class="form-control" id="disabledInput" type="text" placeholder="English" disabled>
-			<p class="help-block">Currently we only offer English to teach. More coming soon.</p>
+			<p class="help-block"><%= t('.message')%></p>
 		</div>
 	</div>
 
-	<%= f.hidden_field :subject_to_teach, value: 'English' %>
-	<%= f.form_group :education, label: { text: "Education" } do %>
-	  <%= f.radio_button :education, 'College', label: "College" %>
-	  <%= f.radio_button :education, 'Bachelors', label: "Bachelors" %>
-	  <%= f.radio_button :education, 'Masters', label: "Masters" %>
-	  <%= f.radio_button :education, 'Other', label: "Other" %>
+	<%= f.hidden_field :subject_to_teach, value: "English" %>
+	<%= f.form_group :education, label: { text: t(".education") } do %>
+	  <%= f.radio_button :education, 'College', label:  t('.college')  %>
+	  <%= f.radio_button :education, 'Bachelors', label: t('.bachelors') %>
+	  <%= f.radio_button :education, 'Masters', label: t('.masters') %>
+	  <%= f.radio_button :education, 'Other', label: t('.other') %>
 	<% end %>
 
 	<%= f.number_field :price_cents %>
 	<%= f.text_field :skype %>
-	<%= f.text_area :description, rows: 8 %>
+	<%= f.text_area :description, rows: 8 , label: "things"%>
 	<%= f.form_group do  %>
 	  <%= f.primary "Save it!" %> 
   <% end %>

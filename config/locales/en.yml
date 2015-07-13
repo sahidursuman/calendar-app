@@ -38,6 +38,8 @@ en:
     home:
       title: "Home Page"
       subheading: "We'll put more cool shit here"
+      users_index: "Users Index"
+      instructors_index: "Instructors Index"
   devise:
     sessions:
       new:
@@ -63,6 +65,15 @@ en:
       sign_out: "Sign Out"
       become: "Become an Instructor"
   instructors:
+    form:
+      subject: "Subject to Teach"
+      message: "Currently we only offer English to teach. More coming soon."
+      default: "English"
+      education: "Education:"
+      college: "College"
+      bachelors: "Bachelors:"
+      masters: "Masters"
+      other: "Other"
   activerecord:
     attributes:
       instructor:

@@ -38,6 +38,8 @@ zh:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
+      users_index: "U Index"
+      instructors_index: "I Index"
   devise:
     sessions:
       new:
@@ -63,6 +65,15 @@ zh:
       sign_out: "SO"
       become: "EMBRACE YOUR DESTINY"
   instructors:
+    form:
+      subject: '学科'
+      message: "目前，我们只提供英语"
+      default: "英语"
+      education: "学位:"
+      college: "学院"
+      bachelors: "本科学位"
+      masters: "硕士学位"
+      other: "其他"
   activerecord:
     attributes:
       instructor:
