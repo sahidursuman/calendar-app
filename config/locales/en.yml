@@ -43,6 +43,11 @@ en:
       sign_in: "Sign In"
       sign_up: "Sign Up"
       instructors: "Instructors"
+      profile: "Profile"
+      edit: "Edit your account"
+      greeting: "Signed in as:"
+      sign_out: "Sign Out"
+      become: "Become an Instructor"
   instructors:
   activerecord:
     attributes:

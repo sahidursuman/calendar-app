@@ -43,6 +43,11 @@ zh:
       sign_in: "SI"
       sign_up: "SU"
       instructors: "laoshi"
+      profile: "P"
+      edit: "editttt"
+      greeting: "SI:"
+      sign_out: "SO"
+      become: "EMBRACE YOUR DESTINY"
   instructors:
   activerecord:
     attributes:
