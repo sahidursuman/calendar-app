@@ -65,6 +65,11 @@ zh:
       sign_out: "SO"
       become: "成为老师"
   instructors:
+    index:
+      index: "教师名单"
+      select: "选择一个老师"
+    new:
+      become: "成为老师"
     form:
       avatar: "头像"
       resume: "简历"

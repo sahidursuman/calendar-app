@@ -65,6 +65,11 @@ en:
       sign_out: "Sign Out"
       become: "Become an Instructor"
   instructors:
+    index:
+      index: "Instructors Index"
+      select: "Select a Teacher"
+    new:
+      become: "Become an Instructor"
     form:
       avatar: "Avatar"
       resume: "Resume"
