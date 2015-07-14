@@ -100,7 +100,8 @@ zh:
       education: "学位"
       rate: "每小时收费" 
       language: "语言"
-
+      reviews: "评论"
+      booking_title: "进行预订"
   date:
     order:
       - :year
