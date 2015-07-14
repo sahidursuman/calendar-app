@@ -16,18 +16,18 @@
 		
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading"><%= @first_name %><%=  Instructor.human_attribute_name(:description) %></div>
+		  <div class="panel-heading"><%= @first_name %><%=  t('.description') %></div>
 		  <div class="panel-body">
 		    <p>Take a look at <%= @first_name %>'s info and see if they're the teacher for you </p>
 		  </div>
 		  <!-- List group -->
 		  <ul class="list-group">
-		    <li class="list-group-item"><b><%= 	Instructor.human_attribute_name(:time_zone) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:country_of_origin) %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
+		    <li class="list-group-item"><b><%= 	t('.time_zone') %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
+		    <li class="list-group-item"><b><%=  t('.country_of_origin') %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
 		    <!-- <li class="list-group-item"><b>First Language: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%# @instructor.first_language %></li> -->
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:teaching) %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:education) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
-		     <li class="list-group-item"><b><%=   Instructor.human_attribute_name(:rate) %>:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
+		    <li class="list-group-item"><b><%=  t('.teaching') %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
+		    <li class="list-group-item"><b><%=  t('.education') %>: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
+		     <li class="list-group-item"><b><%=   t('.rate') %>:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
 		  </ul>
 		</div>
 
@@ -49,7 +49,7 @@
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		<div id='top'>
-			Language:
+			<%= t('.language')%>
 			<select id='lang-selector'></select>
 		</div>
 	</div>
@@ -76,12 +76,12 @@
 
 <!-- reviews for each instructor -->
 <h3>
-  Reviews for <%= "#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %>
+  <%= t('.reviews')%><%= "#{@instructor.teacher.first_name} #{@instructor.teacher.last_name}" %>
 </h3>
   <p>
     <% @instructor.reviews.each do |review| %>
       <% if review.student %>
-        <h4> <%= review.student.first_name%> says: </h4>   
+        <h4> <%= review.student.first_name%> </h4>   
       <% end %>
       <p> <%= review.comment %> </br> </p>
     <% end %>
@@ -100,7 +100,7 @@
    <div class="modal-content">
      <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-         <h4 id="modalTitle" class="modal-title">Create an Availability</h4>
+         <h4 id="modalTitle" class="modal-title"><%= t('.availability_title') %></h4>
      </div>
 
      <div id="modalBody" class="modal-body">
@@ -121,7 +121,7 @@
 
       <div class="modal-footer form-group">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="commit" id='submit_availability' class="btn btn-md btn-primary">Create this Availability!</button>
+        <button type="submit" name="commit" id='submit_availability' class="btn btn-md btn-primary"><%= t('create_availability') %></button>
       </div>
     <% end %>
     </div>
@@ -134,7 +134,7 @@
    <div class="modal-content">
      <div class="modal-header">
        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span> <span class="sr-only">close</span></button>
-         <h4 id="modalTitle" class="modal-title">Make a Booking</h4>
+         <h4 id="modalTitle" class="modal-title"><%= t('.booking_title')%></h4>
      </div>
 
      <div id="modalBody" class="modal-body">
@@ -147,7 +147,7 @@
 
       <div class="modal-footer form-group">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" name="commit" id='submit_booking' class="btn btn-md btn-primary">Create this Booking!</button>
+        <button type="submit" name="commit" id='submit_booking' class="btn btn-md btn-primary"><%= t(".create_booking") %></button>
       </div>
     <% end %>
     </div>

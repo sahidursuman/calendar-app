@@ -7,65 +7,65 @@
 		<% end %>
 	<% end %>
 
-	<%= f.file_field :avatar %>
+	<%= f.file_field :avatar, label: t('.avatar') %>
 	<%= f.hidden_field :avatar_cache %>
 
 
 	<% if @instructor.resume? %>
-		<%= f.form_group :remove_resume, label: {text: "Resume"} do %>
-			<%= f.check_box :remove_resume, label: "You've already uploaded a Resume. Remove?" %>
+		<%= f.form_group :remove_resume, label: {text: t(".resume")} do %>
+			<%= f.check_box :remove_resume, label: t(".resume_message") %>
 		<% end %>
 	<% else %>
-			<%= f.file_field :resume %>
+			<%= f.file_field :resume, label: t(".resume") %>
 			<%= f.hidden_field :resume_cache %>	
 	<% end %>
 
 	<% if @instructor.credential? %>
-		<%= f.form_group :remove_credential, label: {text: "Credential"} do %>
-			<%= f.check_box :remove_credential, label: "You've already uploaded a credential. Remove?" %>
+		<%= f.form_group :remove_credential, label: {text: t(".credential")} do %>
+			<%= f.check_box :remove_credential, label: t(".credential_message") %>
 		<% end %>
 	<% else %>
-		<%= f.file_field :credential %>
+		<%= f.file_field :credential, label: t(".credential") %>
 		<%= f.hidden_field :credential_cache %>
 	<% end %>
 
 	<% if @instructor.credential_extra? %>
-		<%= f.form_group :remove_credential_extra, label: {text: "Second Credential"} do %>
-			<%= f.check_box :remove_credential_extra, label: "You've already uploaded a second credential. Remove?" %>
+		<%= f.form_group :remove_credential_extra, label: {text: t(".second_credential")} do %>
+			<%= f.check_box :remove_credential_extra, label: t(".second_credential_message") %>
 		<% end %>
 	<% else %>
-		<%= f.file_field :credential_extra, label: "Second Credential" %>
+		<%= f.file_field :credential_extra, label: t(".second_credential") %>
 		<%= f.hidden_field :credential_extra_cache %>
 	<% end %>
 
-	<%= f.form_group :country, label: {text: "Country"} do %>
-	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB", "AU"], prompt: 'Where are you from?'}, class: 'form-control' %>
+	<%= f.form_group :country, label: {text: t(".country")} do %>
+	  <%= f.country_select :country_of_origin, {priority_countries: ["US", "CA", "GB", "AU"], prompt: t('.country_prompt')}, class: 'form-control' %>
   <% end %>
 
 	<%# f.text_field :first_language %>
 	
 	<div class="form-group">
 		<label for="" class="control-label col-sm-2">
-			Subject to teach
+			<%= t('.subject') %>
 		</label>
 		<div class="col-sm-8">
 			<input class="form-control" id="disabledInput" type="text" placeholder="English" disabled>
-			<p class="help-block">Currently we only offer English to teach. More coming soon.</p>
+			<p class="help-block"><%= t('.message')%></p>
 		</div>
 	</div>
 
-	<%= f.hidden_field :subject_to_teach, value: 'English' %>
-	<%= f.form_group :education, label: { text: "Education" } do %>
-	  <%= f.radio_button :education, 'College', label: "College" %>
-	  <%= f.radio_button :education, 'Bachelors', label: "Bachelors" %>
-	  <%= f.radio_button :education, 'Masters', label: "Masters" %>
-	  <%= f.radio_button :education, 'Other', label: "Other" %>
+	<%= f.hidden_field :subject_to_teach, value: "English" %>
+	<%= f.form_group :education, label: { text: t(".education") } do %>
+	  <%= f.radio_button :education, 'College', label:  t('.college')  %>
+	  <%= f.radio_button :education, 'Bachelors', label: t('.bachelors') %>
+	  <%= f.radio_button :education, 'Masters', label: t('.masters') %>
+	  <%= f.radio_button :education, 'Other', label: t('.other') %>
 	<% end %>
 
-	<%= f.number_field :price_cents %>
-	<%= f.text_field :skype %>
-	<%= f.text_area :description, rows: 8 %>
+	<%= f.number_field :price_cents, label: t('.price') %>
+	<%= f.text_field :skype, label: t('.skype') %>
+	<%= f.text_area :description, rows: 8 , label: t(".description") %>
 	<%= f.form_group do  %>
-	  <%= f.primary "Save it!" %> 
+	  <%= f.primary t(".save") %> 
   <% end %>
 <% end %>

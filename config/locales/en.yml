@@ -20,10 +20,26 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  users:
+    show:
+      first_name: "First Name:"
+      last_name: "Last Name:"
+      email: "Email:"
+      time_zone: "Time Zone:"
+      admin: "Admin:"
+      bookings: "Current Bookings"
+      start_date: "Start Date"
+      start_time: "Start Time"
+      end_date: "End Date"
+      end_time: "End Time"
+      instructor: "Instructor"
+      account: "Account Info"
   pages:
     home:
       title: "Home Page"
       subheading: "We'll put more cool shit here"
+      users_index: "Users Index"
+      instructors_index: "Instructors Index"
   devise:
     sessions:
       new:
@@ -49,15 +65,46 @@ en:
       sign_out: "Sign Out"
       become: "Become an Instructor"
   instructors:
-  activerecord:
-    attributes:
-      instructor:
-        description: "'s info"
-        time_zone: "Time Zone"
-        country_of_origin: "Country of Origin"
-        teaching: "Teaching"
-        education: "Education"
-        rate: "Hourly Rate" 
+    index:
+      index: "Instructors Index"
+      select: "Select a Teacher"
+    new:
+      become: "Become an Instructor"
+    form:
+      avatar: "Avatar"
+      resume: "Resume"
+      resume_message: "You've already uploaded a Resume. Remove?"
+      credential: "Credential"
+      credential_message: "You've already uploaded a credential. Remove?"
+      second_credential: "Second Credential"
+      second_credential_message: "You've already uploaded a second credential. Remove?"
+      country: "Country"
+      country_prompt: "Where are you from?"
+      subject: "Subject to Teach"
+      message: "Currently we only offer English to teach. More coming soon."
+      default: "English"
+      education: "Education:"
+      college: "College"
+      bachelors: "Bachelors"
+      masters: "Masters"
+      other: "Other"
+      price: "Price in Cents"
+      skype: "Skype"
+      description: "Description"
+      save: "Save It!"
+    show:
+      description: "'s info"
+      time_zone: "Time Zone"
+      country_of_origin: "Country of Origin"
+      teaching: "Teaching"
+      education: "Education"
+      rate: "Hourly Rate" 
+      language: "Language"
+      reviews: "Reviews for "
+      availability_title: "Make an Availability"
+      create_availability: "Create this Availability!"
+      booking_title: "Make a booking"
+      create_booking: "Create this Booking!"
   date:
     order:
       - :year

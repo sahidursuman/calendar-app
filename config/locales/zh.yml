@@ -20,44 +20,91 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh:
+  users:
+    show:
+      first_name: "名字:"
+      last_name: "姓:"
+      email: "邮件:"
+      time_zone: "时区:"
+      admin: "管理员:"
+      bookings: "我的预订"
+      start_date: "开始日期"
+      start_time: "开始时间"
+      end_date: "结束日期"
+      end_time: "时间结束"
+      instructor: "老师 "
+      account: "AC"
   pages:
     home:
       title: "这里"
       subheading: "过一会要放这里厉害东西"
+      users_index: "用户索引"
+      instructors_index: "老师索引"
   devise:
     sessions:
       new:
-        email: "E"
-        password: "pw"
-        remember_me: "rm"
+        email: "邮件"
+        password: "密码"
+        remember_me: "记住我"
         sign_in: "SN"
     shared:
       links:
-        forgot: "F P?"
+        forgot: "你忘了密码"
         sign_up: "S U"
-        confirmation: "No instructions?"
+        confirmation: "您没有收到一个确认邮件?"
   layouts:
     nav:
-      home: "H"
+      home: "主页"
     nav_links:
       sign_in: "SI"
       sign_up: "SU"
-      instructors: "laoshi"
-      profile: "P"
-      edit: "editttt"
+      instructors: "老师"
+      profile: "轮廓"
+      edit: "改变"
       greeting: "SI:"
       sign_out: "SO"
-      become: "EMBRACE YOUR DESTINY"
+      become: "成为老师"
   instructors:
-  activerecord:
-    attributes:
-      instructor:
-        description: "stuff"
-        time_zone: "时区"
-        country_of_origin: "Guo Jia"
-        teaching: "Jiao"
-        education: "Edu"
-        rate: "Jia Chien" 
+    index:
+      index: "教师名单"
+      select: "选择一个老师"
+    new:
+      become: "成为老师"
+    form:
+      avatar: "头像"
+      resume: "简历"
+      resume_message: "你已经上传了一个简历,去掉它?"
+      credential: "凭据"
+      credential_message: "你已经上传了一个凭据,去掉它?"
+      second_credential: "第二个凭据"
+      second_credential_message: "你已经上传了第二个凭据,去掉它?"
+      country: "国家"
+      country_prompt: "你来自哪里?"
+      subject: '学科'
+      message: "目前，我们只提供英语"
+      default: "英语"
+      education: "学位:"
+      college: "学院"
+      bachelors: "本科学位"
+      masters: "硕士学位"
+      other: "其他"
+      price: "每小时收费"
+      skype: "Skype"
+      description: "信息"
+      save: "保存"
+    show:
+      description: "信息"
+      time_zone: "时区"
+      country_of_origin: "国家"
+      teaching: "教学"
+      education: "学位"
+      rate: "每小时收费" 
+      language: "语言"
+      reviews: "评论"
+      availability_title: "创建一个空位"
+      create_availability: "创建这个空位!"
+      booking_title: "创建一个预订"
+      create_booking: "创建这个预订!"
   date:
     order:
       - :year
