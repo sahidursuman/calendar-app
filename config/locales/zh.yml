@@ -92,15 +92,15 @@ zh:
       skype: "Skype"
       description: "信息"
       save: "保存"
-  activerecord:
-    attributes:
-      instructor:
-        description: "信息"
-        time_zone: "时区"
-        country_of_origin: "国家"
-        teaching: "教学"
-        education: "学位"
-        rate: "每小时收费" 
+    show:
+      description: "信息"
+      time_zone: "时区"
+      country_of_origin: "国家"
+      teaching: "教学"
+      education: "学位"
+      rate: "每小时收费" 
+      language: "语言"
+
   date:
     order:
       - :year

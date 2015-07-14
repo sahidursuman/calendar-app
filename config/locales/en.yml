@@ -92,15 +92,14 @@ en:
       skype: "Skype"
       description: "Description"
       save: "Save It!"
-  activerecord:
-    attributes:
-      instructor:
-        description: "'s info"
-        time_zone: "Time Zone"
-        country_of_origin: "Country of Origin"
-        teaching: "Teaching"
-        education: "Education"
-        rate: "Hourly Rate" 
+    show:
+      description: "'s info"
+      time_zone: "Time Zone"
+      country_of_origin: "Country of Origin"
+      teaching: "Teaching"
+      education: "Education"
+      rate: "Hourly Rate" 
+      language: "Language"
   date:
     order:
       - :year

@@ -16,18 +16,18 @@
 		
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading"><%= @first_name %><%=  Instructor.human_attribute_name(:description) %></div>
+		  <div class="panel-heading"><%= @first_name %><%=  t('.description') %></div>
 		  <div class="panel-body">
 		    <p>Take a look at <%= @first_name %>'s info and see if they're the teacher for you </p>
 		  </div>
 		  <!-- List group -->
 		  <ul class="list-group">
-		    <li class="list-group-item"><b><%= 	Instructor.human_attribute_name(:time_zone) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:country_of_origin) %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
+		    <li class="list-group-item"><b><%= 	t('.time_zone') %>: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.teacher.time_zone %></li>
+		    <li class="list-group-item"><b><%=  t('.country_of_origin') %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.country_name %></li>
 		    <!-- <li class="list-group-item"><b>First Language: </b>&nbsp;&nbsp;&nbsp;&nbsp; <%# @instructor.first_language %></li> -->
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:teaching) %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
-		    <li class="list-group-item"><b><%=  Instructor.human_attribute_name(:education) %>: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
-		     <li class="list-group-item"><b><%=   Instructor.human_attribute_name(:rate) %>:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
+		    <li class="list-group-item"><b><%=  t('.teaching') %>: </b> &nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.subject_to_teach %></li>
+		    <li class="list-group-item"><b><%=  t('.education') %>: </b>&nbsp;&nbsp;&nbsp;&nbsp;<%= @instructor.education %></li>
+		     <li class="list-group-item"><b><%=   t('.rate') %>:</b>&nbsp;&nbsp;&nbsp;&nbsp; <%= @instructor.price_cents %></li>
 		  </ul>
 		</div>
 
@@ -49,7 +49,7 @@
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-1">
 		<div id='top'>
-			Language:
+			<%= t('.language')%>
 			<select id='lang-selector'></select>
 		</div>
 	</div>
