@@ -101,7 +101,10 @@ en:
       rate: "Hourly Rate" 
       language: "Language"
       reviews: "Reviews for "
+      availability_title: "Make an Availability"
+      create_availability: "Create this Availability!"
       booking_title: "Make a booking"
+      create_booking: "Create this Booking!"
   date:
     order:
       - :year

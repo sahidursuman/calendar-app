@@ -101,7 +101,10 @@ zh:
       rate: "每小时收费" 
       language: "语言"
       reviews: "评论"
-      booking_title: "进行预订"
+      availability_title: "创建一个空位"
+      create_availability: "创建这个空位!"
+      booking_title: "创建一个预订"
+      create_booking: "创建这个预订!"
   date:
     order:
       - :year
